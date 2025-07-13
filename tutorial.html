@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Tutorial &#8212; QuantumEngine v0.1.2</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d017478c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="_static/documentation_options.js?v=b14783f5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=30646c52"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api/index.html" />
+    <link rel="prev" title="Quick Start Guide" href="quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.2" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="QuantumEngine v0.1.2 - Home"/>
+    <img src="_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="QuantumEngine v0.1.2 - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart.html">
+    Quick Start Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Tutorial
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/iristech-systems/QuantumEngine">
+    GitHub Repository
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pypi.org/project/quantumengine/">
+    PyPI Package
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/iristech-systems/QuantumEngine/issues">
+    Issue Tracker
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart.html">
+    Quick Start Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Tutorial
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/iristech-systems/QuantumEngine">
+    GitHub Repository
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pypi.org/project/quantumengine/">
+    PyPI Package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/iristech-systems/QuantumEngine/issues">
+    Issue Tracker
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://pypi.org/project/quantumengine/" class="nav-link">PyPI</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Tutorial</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading"><span>¶</span></a></h1>
+<p>This tutorial will guide you through QuantumEngine’s advanced features step by step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial assumes you’ve completed the <a class="reference internal" href="quickstart.html"><span class="doc">Quick Start Guide</span></a> guide.</p>
+</div>
+<section id="advanced-field-types">
+<h2>Advanced Field Types<a class="headerlink" href="#advanced-field-types" title="Link to this heading"><span>¶</span></a></h2>
+<p>QuantumEngine provides specialized field types for different use cases:</p>
+<section id="clickhouse-specific-fields">
+<h3>ClickHouse-Specific Fields<a class="headerlink" href="#clickhouse-specific-fields" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields.clickhouse</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LowCardinalityField</span><span class="p">,</span> <span class="n">ArrayField</span><span class="p">,</span> <span class="n">FixedStringField</span>
+<span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProductCatalog</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="c1"># LowCardinality for enum-like values</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">LowCardinalityField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># More efficient than StringField</span>
+    <span class="n">brand</span> <span class="o">=</span> <span class="n">LowCardinalityField</span><span class="p">()</span>
+
+    <span class="c1"># Arrays with type constraints</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">ArrayField</span><span class="p">(</span><span class="n">LowCardinalityField</span><span class="p">())</span>  <span class="c1"># Array(LowCardinality(String))</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">ArrayField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>        <span class="c1"># Array(String)</span>
+
+    <span class="c1"># Fixed-length strings</span>
+    <span class="n">product_code</span> <span class="o">=</span> <span class="n">FixedStringField</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># FixedString(10)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="s1">&#39;clickhouse&#39;</span>
+        <span class="n">collection</span> <span class="o">=</span> <span class="s1">&#39;products&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="schema-management">
+<h2>Schema Management<a class="headerlink" href="#schema-management" title="Link to this heading"><span>¶</span></a></h2>
+<p>QuantumEngine supports both strict and flexible schemas:</p>
+<section id="schemafull-vs-schemaless">
+<h3>SCHEMAFULL vs SCHEMALESS<a class="headerlink" href="#schemafull-vs-schemaless" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># SCHEMAFULL - Strict schema enforcement</span>
+<span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">schemafull</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># SCHEMALESS - Flexible schema</span>
+<span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">schemafull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Hybrid approach - some fields always defined</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="c1"># Always defined in schema</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">define_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">FloatField</span><span class="p">(</span><span class="n">define_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Only defined in SCHEMAFULL tables</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="index-management">
+<h3>Index Management<a class="headerlink" href="#index-management" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">IntField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">collection</span> <span class="o">=</span> <span class="s2">&quot;users&quot;</span>
+        <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;user_username_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">],</span> <span class="s2">&quot;unique&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;user_email_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">],</span> <span class="s2">&quot;unique&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;user_age_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]}</span>
+        <span class="p">]</span>
+
+<span class="c1"># Create indexes</span>
+<span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">create_indexes</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="relationships-surrealdb">
+<h2>Relationships (SurrealDB)<a class="headerlink" href="#relationships-surrealdb" title="Link to this heading"><span>¶</span></a></h2>
+<p>QuantumEngine supports rich relationship modeling in SurrealDB:</p>
+<section id="document-references">
+<h3>Document References<a class="headerlink" href="#document-references" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReferenceField</span><span class="p">,</span> <span class="n">ListField</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Post</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">ReferenceField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">field_type</span><span class="o">=</span><span class="n">ReferenceField</span><span class="p">(</span><span class="n">Category</span><span class="p">))</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">collection</span> <span class="o">=</span> <span class="s2">&quot;posts&quot;</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;surrealdb&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="graph-relations">
+<h3>Graph Relations<a class="headerlink" href="#graph-relations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create relations between documents</span>
+<span class="k">await</span> <span class="n">author1</span><span class="o">.</span><span class="n">relate_to</span><span class="p">(</span><span class="s2">&quot;collaborated_with&quot;</span><span class="p">,</span> <span class="n">author2</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="s2">&quot;Novel&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fetch relations</span>
+<span class="n">collaborators</span> <span class="o">=</span> <span class="k">await</span> <span class="n">author1</span><span class="o">.</span><span class="n">fetch_relation</span><span class="p">(</span><span class="s2">&quot;collaborated_with&quot;</span><span class="p">)</span>
+
+<span class="c1"># Resolve relations (get related documents)</span>
+<span class="n">related_authors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">author1</span><span class="o">.</span><span class="n">resolve_relation</span><span class="p">(</span><span class="s2">&quot;collaborated_with&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="relation-documents">
+<h3>Relation Documents<a class="headerlink" href="#relation-documents" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelationDocument</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthorCollaboration</span><span class="p">(</span><span class="n">RelationDocument</span><span class="p">):</span>
+    <span class="n">project_name</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+    <span class="n">contribution_percent</span> <span class="o">=</span> <span class="n">FloatField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">collection</span> <span class="o">=</span> <span class="s2">&quot;collaborated_with&quot;</span>
+
+<span class="c1"># Create relation with metadata</span>
+<span class="n">relation</span> <span class="o">=</span> <span class="k">await</span> <span class="n">AuthorCollaboration</span><span class="o">.</span><span class="n">create_relation</span><span class="p">(</span>
+    <span class="n">author1</span><span class="p">,</span> <span class="n">author2</span><span class="p">,</span>
+    <span class="n">project_name</span><span class="o">=</span><span class="s2">&quot;Science Fiction Novel&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+    <span class="n">contribution_percent</span><span class="o">=</span><span class="mf">60.0</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-querying">
+<h2>Advanced Querying<a class="headerlink" href="#advanced-querying" title="Link to this heading"><span>¶</span></a></h2>
+<section id="complex-query-building">
+<h3>Complex Query Building<a class="headerlink" href="#complex-query-building" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">QueryExpression</span>
+
+<span class="c1"># Complex filtering with Q objects</span>
+<span class="n">active_adults</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">Q</span><span class="p">(</span><span class="n">age__gte</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">Q</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;banned&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># QueryExpressions with FETCH (SurrealDB)</span>
+<span class="n">posts_with_authors</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">QueryExpression</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">Q</span><span class="p">(</span><span class="n">published</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Ordering and limiting</span>
+<span class="n">recent_posts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">published</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="aggregations">
+<h3>Aggregations<a class="headerlink" href="#aggregations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.aggregation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Count</span><span class="p">,</span> <span class="n">Avg</span><span class="p">,</span> <span class="n">Sum</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">Min</span>
+
+<span class="c1"># Count users by status</span>
+<span class="n">status_counts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+    <span class="n">active_count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="n">Q</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
+    <span class="n">avg_age</span><span class="o">=</span><span class="n">Avg</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># ClickHouse-specific aggregations</span>
+<span class="n">daily_stats</span> <span class="o">=</span> <span class="k">await</span> <span class="n">AnalyticsEvent</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">timestamp__gte</span><span class="o">=</span><span class="n">yesterday</span>
+<span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">event_count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+    <span class="n">total_value</span><span class="o">=</span><span class="n">Sum</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">),</span>
+    <span class="n">avg_value</span><span class="o">=</span><span class="n">Avg</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="performance-optimization">
+<h2>Performance Optimization<a class="headerlink" href="#performance-optimization" title="Link to this heading"><span>¶</span></a></h2>
+<section id="direct-record-access">
+<h3>Direct Record Access<a class="headerlink" href="#direct-record-access" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimized ID-based queries use direct record access</span>
+<span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user:1&#39;</span><span class="p">,</span> <span class="s1">&#39;user:2&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Convenience methods for ID operations</span>
+<span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_many</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="query-analysis">
+<h3>Query Analysis<a class="headerlink" href="#query-analysis" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Explain query execution plan</span>
+<span class="n">plan</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age__gt</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">explain</span><span class="p">()</span>
+
+<span class="c1"># Get index suggestions</span>
+<span class="n">suggestions</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age__lt</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">suggest_indexes</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="bulk-operations">
+<h3>Bulk Operations<a class="headerlink" href="#bulk-operations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bulk updates</span>
+<span class="n">updated</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">active</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;inactive&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bulk deletes</span>
+<span class="n">deleted_count</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">last_login__lt</span><span class="o">=</span><span class="n">cutoff_date</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="connection-management">
+<h2>Connection Management<a class="headerlink" href="#connection-management" title="Link to this heading"><span>¶</span></a></h2>
+<section id="multiple-named-connections">
+<h3>Multiple Named Connections<a class="headerlink" href="#multiple-named-connections" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main transactional database</span>
+<span class="n">main_db</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;main_db&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://localhost:8000/rpc&quot;</span><span class="p">,</span>
+    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;surrealdb&quot;</span><span class="p">,</span>
+    <span class="n">make_default</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Analytics database</span>
+<span class="n">analytics_db</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;analytics_db&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://analytics.clickhouse.cloud&quot;</span><span class="p">,</span>
+    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;clickhouse&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Use specific connection</span>
+<span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">main_db</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">AnalyticsEvent</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">analytics_db</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="connection-pooling">
+<h3>Connection Pooling<a class="headerlink" href="#connection-pooling" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connection with pooling</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://localhost:8000/rpc&quot;</span><span class="p">,</span>
+    <span class="n">pool_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">max_overflow</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">pool_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">pool_recycle</span><span class="o">=</span><span class="mi">3600</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="async-sync-api">
+<h2>Async/Sync API<a class="headerlink" href="#async-sync-api" title="Link to this heading"><span>¶</span></a></h2>
+<section id="synchronous-operations">
+<h3>Synchronous Operations<a class="headerlink" href="#synchronous-operations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create sync connection</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://localhost:8000/rpc&quot;</span><span class="p">,</span>
+    <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;test_ns&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;test_db&quot;</span><span class="p">,</span>
+    <span class="n">async_mode</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="n">connection</span><span class="p">:</span>
+    <span class="c1"># Synchronous operations</span>
+    <span class="n">User</span><span class="o">.</span><span class="n">create_table_sync</span><span class="p">(</span><span class="n">schemafull</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;alice@example.com&quot;</span><span class="p">)</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">save_sync</span><span class="p">()</span>
+
+    <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all_sync</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_sync</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">delete_sync</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="migration-and-schema-evolution">
+<h2>Migration and Schema Evolution<a class="headerlink" href="#migration-and-schema-evolution" title="Link to this heading"><span>¶</span></a></h2>
+<section id="generating-migrations">
+<h3>Generating Migrations<a class="headerlink" href="#generating-migrations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_migration_statements</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserV1</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserV2</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">active</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># New field</span>
+
+<span class="n">migration</span> <span class="o">=</span> <span class="n">generate_migration_statements</span><span class="p">(</span><span class="n">UserV1</span><span class="p">,</span> <span class="n">UserV2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UP migration:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">migration</span><span class="p">[</span><span class="s1">&#39;up&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">stmt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DOWN migration:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">migration</span><span class="p">[</span><span class="s1">&#39;down&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">stmt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="drop-table-operations">
+<h3>Drop Table Operations<a class="headerlink" href="#drop-table-operations" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">generate_drop_statements</span><span class="p">,</span>
+    <span class="n">drop_tables_from_module</span>
+<span class="p">)</span>
+
+<span class="c1"># Drop individual table</span>
+<span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">drop_table</span><span class="p">(</span><span class="n">if_exists</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Generate drop statements for scripts</span>
+<span class="n">drop_statements</span> <span class="o">=</span> <span class="n">generate_drop_statements</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+
+<span class="c1"># Drop all tables in a module</span>
+<span class="k">await</span> <span class="n">drop_tables_from_module</span><span class="p">(</span><span class="s1">&#39;myapp.models&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading"><span>¶</span></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Use appropriate backends</strong>: SurrealDB for transactional data, ClickHouse for analytics</p></li>
+<li><p><strong>Leverage modular installation</strong>: Only install backends you need</p></li>
+<li><p><strong>Use LowCardinalityField</strong> for enum-like values in ClickHouse</p></li>
+<li><p><strong>Index frequently queried fields</strong></p></li>
+<li><p><strong>Use Q objects for complex queries</strong></p></li>
+<li><p><strong>Handle backend availability gracefully</strong></p></li>
+<li><p><strong>Use connection pooling for high-traffic applications</strong></p></li>
+</ol>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"><span>¶</span></a></h2>
+<ul class="simple">
+<li><p>Explore the <a class="reference internal" href="api/index.html"><span class="doc">API Reference</span></a> for detailed API documentation</p></li>
+<li><p>Check out <span class="xref std std-doc">examples/index</span> for real-world usage patterns</p></li>
+<li><p>Learn about specific <span class="xref std std-doc">backends/index</span> features</p></li>
+<li><p>Contribute to the project via <a class="reference internal" href="contributing.html"><span class="doc">Contributing</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-field-types">Advanced Field Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse-specific-fields">ClickHouse-Specific Fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-management">Schema Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schemafull-vs-schemaless">SCHEMAFULL vs SCHEMALESS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-management">Index Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships-surrealdb">Relationships (SurrealDB)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#document-references">Document References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-relations">Graph Relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-documents">Relation Documents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-querying">Advanced Querying</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-query-building">Complex Query Building</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-optimization">Performance Optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-record-access">Direct Record Access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-analysis">Query Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-operations">Bulk Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-management">Connection Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-named-connections">Multiple Named Connections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-pooling">Connection Pooling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-sync-api">Async/Sync API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-operations">Synchronous Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-and-schema-evolution">Migration and Schema Evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-migrations">Generating Migrations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-table-operations">Drop Table Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "_static/search.json";
+const ADVANCE_SEARCH_PATH = "search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Iristech Systems.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+.. raw:: html
+
+   <div align="center">
+     <img src="_static/quantumengine_logo.svg" alt="QuantumEngine Logo" width="400" style="margin-bottom: 20px;">
+   </div>
+
+QuantumEngine Documentation
+===========================
+
+**A powerful, multi-backend Object-Document Mapper (ODM) for Python**
+
+QuantumEngine provides a unified API for working with both transactional and analytical databases. Supporting SurrealDB (graph/document) and ClickHouse (columnar analytical) with a single, consistent interface.
+
+.. raw:: html
+
+   <div align="center">
+     <a href="https://pypi.org/project/quantumengine/"><img src="https://img.shields.io/pypi/v/quantumengine.svg" alt="PyPI version"></a>
+     <a href="https://pypi.org/project/quantumengine/"><img src="https://img.shields.io/pypi/pyversions/quantumengine.svg" alt="Python versions"></a>
+     <a href="https://github.com/iristech-systems/QuantumEngine/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+     <a href="https://pypi.org/project/quantumengine/"><img src="https://img.shields.io/pypi/dm/quantumengine.svg" alt="Downloads"></a>
+   </div>
+
+Key Features
+------------
+
+✨ **Multi-Backend Architecture**: SurrealDB + ClickHouse support
+🔒 **Type-Safe Field System**: 15+ field types with validation  
+🔍 **Advanced Query System**: Q objects, QueryExpressions, and filtering
+🔗 **Relationship Management**: Graph relations and references
+📊 **Schema Management**: SCHEMAFULL and SCHEMALESS table support
+⚡ **Async/Sync APIs**: Complete async/await support with sync alternatives
+🔌 **Modular Installation**: Install only the backends you need
+
+Installation
+------------
+
+QuantumEngine uses a **modular installation system** - install only the backends you need:
+
+.. code-block:: bash
+
+   # Core package only (lightweight)
+   pip install quantumengine
+
+   # With ClickHouse support
+   pip install quantumengine[clickhouse]
+
+   # With SurrealDB support  
+   pip install quantumengine[surrealdb]
+
+   # With both backends
+   pip install quantumengine[clickhouse,surrealdb]
+
+   # Everything (all backends + dev tools)
+   pip install quantumengine[all]
+
+Quick Start
+-----------
+
+.. code-block:: python
+
+   import os
+   from quantumengine import Document, StringField, IntField, create_connection
+
+   # Define a document model
+   class User(Document):
+       username = StringField(required=True)
+       email = StringField(required=True)
+       age = IntField(min_value=0)
+       
+       class Meta:
+           collection = "users"
+           backend = "surrealdb"  # or "clickhouse"
+
+   # Create connection
+   connection = create_connection(
+       url="ws://localhost:8000/rpc",
+       namespace="test_ns",
+       database="test_db",
+       username=os.environ.get("SURREALDB_USER"),
+       password=os.environ.get("SURREALDB_PASS"),
+       make_default=True
+   )
+
+   await connection.connect()
+
+   # Create table
+   await User.create_table()
+
+   # CRUD operations
+   user = User(username="alice", email="alice@example.com", age=25)
+   await user.save()
+
+   users = await User.objects.filter(age__gt=18).all()
+   await User.objects.filter(username="alice").update(age=26)
+
+Table of Contents
+-----------------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   quickstart
+   tutorial
+   api/index
+   backends/index
+   fields/index
+   queries/index
+   examples/index
+   contributing
+   changelog
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Links:
+
+   GitHub Repository <https://github.com/iristech-systems/QuantumEngine>
+   PyPI Package <https://pypi.org/project/quantumengine/>
+   Issue Tracker <https://github.com/iristech-systems/QuantumEngine/issues>
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

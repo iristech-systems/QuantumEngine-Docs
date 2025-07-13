@@ -1,0 +1,268 @@
+Quick Start Guide
+=================
+
+This guide will get you up and running with QuantumEngine in just a few minutes.
+
+Installation
+------------
+
+Install QuantumEngine with the backend you need:
+
+.. code-block:: bash
+
+   # For SurrealDB
+   pip install quantumengine[surrealdb]
+   
+   # For ClickHouse
+   pip install quantumengine[clickhouse]
+   
+   # For both
+   pip install quantumengine[all]
+
+Basic Example
+-------------
+
+Here's a simple example using SurrealDB:
+
+.. code-block:: python
+
+   import asyncio
+   import os
+   from quantumengine import Document, StringField, IntField, create_connection
+
+   # Define your document model
+   class User(Document):
+       username = StringField(required=True)
+       email = StringField(required=True)
+       age = IntField(min_value=0)
+       
+       class Meta:
+           collection = "users"
+           backend = "surrealdb"
+
+   async def main():
+       # Create connection
+       connection = create_connection(
+           url="ws://localhost:8000/rpc",
+           namespace="test_ns",
+           database="test_db",
+           username="root",
+           password="root",
+           make_default=True
+       )
+
+       # Connect to database
+       await connection.connect()
+
+       # Create table
+       await User.create_table()
+
+       # Create a user
+       user = User(username="alice", email="alice@example.com", age=25)
+       await user.save()
+       print(f"Created user: {user.id}")
+
+       # Query users
+       users = await User.objects.filter(age__gt=18).all()
+       print(f"Found {len(users)} adult users")
+
+       # Update user
+       await User.objects.filter(username="alice").update(age=26)
+
+       # Get updated user
+       alice = await User.objects.get(username="alice")
+       print(f"Alice's age: {alice.age}")
+
+       # Delete user
+       await alice.delete()
+       print("User deleted")
+
+   # Run the example
+   asyncio.run(main())
+
+Multi-Backend Example
+---------------------
+
+QuantumEngine's real power comes from using multiple backends:
+
+.. code-block:: python
+
+   from quantumengine import Document, StringField, DateTimeField, FloatField
+   from quantumengine.fields.clickhouse import LowCardinalityField
+   from datetime import datetime
+
+   # User data in SurrealDB (transactional)
+   class User(Document):
+       username = StringField(required=True)
+       email = StringField(required=True)
+       created_at = DateTimeField(default=datetime.now)
+       
+       class Meta:
+           collection = "users"
+           backend = "surrealdb"
+
+   # Analytics events in ClickHouse (analytical)
+   class AnalyticsEvent(Document):
+       event_type = LowCardinalityField(required=True)
+       user_id = StringField(required=True)
+       timestamp = DateTimeField(required=True)
+       value = FloatField()
+       
+       class Meta:
+           collection = "events"
+           backend = "clickhouse"
+
+   async def multi_backend_example():
+       # Create connections
+       surrealdb_conn = create_connection(
+           name="surrealdb_main",
+           url="ws://localhost:8000/rpc",
+           backend="surrealdb",
+           namespace="myapp",
+           database="production",
+           make_default=True
+       )
+       
+       clickhouse_conn = create_connection(
+           name="clickhouse_analytics",
+           url="localhost",
+           backend="clickhouse",
+           database="analytics",
+           port=9000
+       )
+
+       # Connect to both
+       await surrealdb_conn.connect()
+       await clickhouse_conn.connect()
+
+       # Create tables
+       await User.create_table()
+       await AnalyticsEvent.create_table()
+
+       # Create user in SurrealDB
+       user = User(username="bob", email="bob@example.com")
+       await user.save()
+
+       # Track event in ClickHouse
+       event = AnalyticsEvent(
+           event_type="login",
+           user_id=str(user.id),
+           timestamp=datetime.now(),
+           value=1.0
+       )
+       await event.save()
+
+       print(f"User {user.username} created in SurrealDB")
+       print(f"Login event tracked in ClickHouse")
+
+Field Types
+-----------
+
+QuantumEngine supports many field types:
+
+.. code-block:: python
+
+   from quantumengine import Document
+   from quantumengine.fields import (
+       StringField, IntField, FloatField, BooleanField,
+       DateTimeField, DecimalField, UUIDField, ListField,
+       DictField, IPAddressField
+   )
+   from quantumengine.fields.clickhouse import LowCardinalityField, ArrayField
+
+   class Product(Document):
+       # Basic fields
+       name = StringField(required=True, max_length=100)
+       price = DecimalField(max_digits=10, decimal_places=2)
+       in_stock = BooleanField(default=True)
+       quantity = IntField(min_value=0)
+       rating = FloatField(min_value=0.0, max_value=5.0)
+       
+       # Advanced fields
+       created_at = DateTimeField(auto_now_add=True)
+       product_id = UUIDField(auto_generate=True)
+       tags = ListField(field_type=StringField())
+       metadata = DictField()
+       supplier_ip = IPAddressField()
+       
+       # ClickHouse-specific fields
+       category = LowCardinalityField()  # Optimized for enums
+       features = ArrayField(LowCardinalityField())  # Array of categories
+       
+       class Meta:
+           collection = "products"
+           backend = "clickhouse"
+
+Querying
+--------
+
+QuantumEngine provides powerful querying capabilities:
+
+.. code-block:: python
+
+   from quantumengine import Q
+
+   # Simple filters
+   users = await User.objects.filter(age__gt=18).all()
+   users = await User.objects.filter(username__contains="admin").all()
+   users = await User.objects.filter(active=True).all()
+
+   # Complex queries with Q objects
+   complex_query = Q(age__gte=18) & Q(age__lte=65) & Q(active=True)
+   users = await User.objects.filter(complex_query).all()
+
+   # OR conditions
+   either_query = Q(role="admin") | Q(permissions__contains="admin")
+   users = await User.objects.filter(either_query).all()
+
+   # NOT conditions
+   not_query = ~Q(status="banned")
+   users = await User.objects.filter(not_query).all()
+
+   # Count
+   count = await User.objects.filter(age__gte=21).count()
+
+   # Ordering
+   users = await User.objects.order_by("-created_at").all()
+
+   # Limiting
+   recent_users = await User.objects.order_by("-created_at").limit(10).all()
+
+Error Handling
+--------------
+
+Handle missing backends gracefully:
+
+.. code-block:: python
+
+   from quantumengine.backends import BackendRegistry
+   from quantumengine.exceptions import BackendNotAvailableError
+
+   try:
+       # Check if backend is available
+       if not BackendRegistry.is_backend_available('clickhouse'):
+           print("ClickHouse backend not available")
+           print("Install with: pip install quantumengine[clickhouse]")
+           return
+           
+       # Use backend
+       connection = create_connection(backend='clickhouse', url='localhost')
+       await connection.connect()
+       
+   except BackendNotAvailableError as e:
+       print(f"Backend error: {e}")
+       # Provide helpful installation instructions
+
+Next Steps
+----------
+
+Now that you have the basics working:
+
+1. **Explore the Tutorial**: Learn about advanced features like relationships and schema management
+2. **Check the API Reference**: Detailed documentation for all classes and methods  
+3. **Browse Examples**: See real-world usage patterns in the examples section
+4. **Join the Community**: Get help and share your experiences on GitHub Discussions
+
+.. note::
+   Make sure you have SurrealDB or ClickHouse running locally for the examples to work. 
+   See the installation guide for database setup instructions.

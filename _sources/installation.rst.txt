@@ -1,0 +1,226 @@
+Installation Guide
+==================
+
+QuantumEngine uses a **modular installation system** that allows you to install only the backends you need, keeping your environment lightweight and efficient.
+
+Installation Options
+--------------------
+
+Core Package (Minimal)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip install quantumengine
+
+**Includes:** Core ORM functionality, field types, query building  
+**Size:** ~5MB  
+**Use Case:** When you want to use only specific backends or aren't sure which backends you'll need
+
+Backend-Specific Installations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ClickHouse Only
+^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   pip install quantumengine[clickhouse]
+
+**Includes:** Core + ClickHouse backend + clickhouse-connect  
+**Use Case:** Data analytics, time-series data, high-performance aggregations
+
+SurrealDB Only
+^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   pip install quantumengine[surrealdb]
+
+**Includes:** Core + SurrealDB backend + surrealdb package  
+**Use Case:** Graph databases, document storage, real-time applications
+
+Multiple Backends
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   pip install quantumengine[clickhouse,surrealdb]
+
+**Includes:** Core + both backends  
+**Use Case:** Multi-database applications, data pipeline systems
+
+Development Installation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip install quantumengine[dev]
+
+**Includes:** Core + testing tools (pytest, mypy, black, ruff)  
+**Use Case:** Contributing to QuantumEngine or extensive development
+
+Complete Installation
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   pip install quantumengine[all]
+
+**Includes:** Everything (all backends + development tools)  
+**Use Case:** Full-featured development environment
+
+Installation Size Comparison
+-----------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 20 20 30
+
+   * - Installation Type
+     - Download Size
+     - Disk Size
+     - Dependencies
+   * - ``quantumengine``
+     - ~1MB
+     - ~5MB
+     - 1 (typing-extensions)
+   * - ``quantumengine[clickhouse]``
+     - ~15MB
+     - ~45MB
+     - +clickhouse-connect
+   * - ``quantumengine[surrealdb]``
+     - ~8MB
+     - ~25MB
+     - +surrealdb
+   * - ``quantumengine[all]``
+     - ~20MB
+     - ~65MB
+     - All backends
+
+Checking Available Backends
+----------------------------
+
+You can check which backends are available in your environment:
+
+.. code-block:: python
+
+   from quantumengine.backends import BackendRegistry
+
+   # List successfully loaded backends
+   print("Available backends:", BackendRegistry.list_backends())
+
+   # List backends with missing dependencies  
+   print("Failed backends:", BackendRegistry.list_failed_backends())
+
+   # Check if specific backend is available
+   if BackendRegistry.is_backend_available('clickhouse'):
+       print("ClickHouse backend is ready!")
+   else:
+       print("ClickHouse backend needs installation")
+
+Troubleshooting
+---------------
+
+Missing Backend Dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you see an error like:
+
+.. code-block:: text
+
+   ImportError: ClickHouse backend requires the 'clickhouse-connect' package. 
+   Install it with: pip install quantumengine[clickhouse]
+
+**Solution:** Install the backend-specific package:
+
+.. code-block:: bash
+
+   pip install quantumengine[clickhouse]
+   # or
+   pip install quantumengine[surrealdb]
+
+Import Errors
+~~~~~~~~~~~~~
+
+If you get import errors for specific backends:
+
+.. code-block:: python
+
+   # This will show you exactly what's missing
+   from quantumengine.backends import BackendRegistry
+   failed = BackendRegistry.list_failed_backends()
+   for backend, error in failed.items():
+       print(f"{backend}: {error}")
+
+Version Conflicts
+~~~~~~~~~~~~~~~~~~
+
+If you experience dependency conflicts:
+
+.. code-block:: bash
+
+   # Upgrade to latest versions
+   pip install --upgrade quantumengine[all]
+
+   # Or install in a clean environment
+   python -m venv quantumengine_env
+   source quantumengine_env/bin/activate  # On Windows: quantumengine_env\\Scripts\\activate
+   pip install quantumengine[all]
+
+Docker Installation
+-------------------
+
+For containerized deployments, you can use the modular installation in your Dockerfile:
+
+.. code-block:: dockerfile
+
+   # Minimal ClickHouse-only container
+   FROM python:3.11-slim
+   RUN pip install quantumengine[clickhouse]
+   COPY . /app
+   WORKDIR /app
+
+   # Or multi-backend container  
+   FROM python:3.11-slim
+   RUN pip install quantumengine[all]
+   COPY . /app
+   WORKDIR /app
+
+Recommended Installation Strategies
+-----------------------------------
+
+For Microservices
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   # Install only what each service needs
+   pip install quantumengine[clickhouse]  # Analytics service
+   pip install quantumengine[surrealdb]   # User management service
+
+For Data Pipelines
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   # Multi-backend for data movement
+   pip install quantumengine[clickhouse,surrealdb]
+
+For Development
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   # Everything for testing and development
+   pip install quantumengine[all,dev]
+
+For Production
+~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   # Specific backends with pinned versions
+   pip install quantumengine[clickhouse]==0.1.2
+
+The modular installation system ensures you only install what you need while maintaining full compatibility across all backends when required.

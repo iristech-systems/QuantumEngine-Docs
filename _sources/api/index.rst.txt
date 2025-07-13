@@ -1,0 +1,62 @@
+API Reference
+=============
+
+This section contains the complete API documentation for QuantumEngine.
+
+Core Classes
+------------
+
+.. automodule:: quantumengine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Document
+~~~~~~~~
+
+.. autoclass:: quantumengine.Document
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Connection
+~~~~~~~~~~
+
+.. autofunction:: quantumengine.create_connection
+
+.. autoclass:: quantumengine.connection.BaseConnection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Fields
+------
+
+.. toctree::
+   :maxdepth: 2
+
+   fields
+
+Backends
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   backends
+
+Query System
+------------
+
+.. toctree::
+   :maxdepth: 2
+
+   queries
+
+Exceptions
+----------
+
+.. automodule:: quantumengine.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:

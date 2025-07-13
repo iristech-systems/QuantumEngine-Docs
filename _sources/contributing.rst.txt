@@ -1,0 +1,219 @@
+Contributing
+============
+
+We welcome contributions to QuantumEngine! This guide will help you get started.
+
+Development Setup
+-----------------
+
+1. **Fork the repository** on GitHub
+2. **Clone your fork** locally:
+
+   .. code-block:: bash
+
+      git clone https://github.com/yourusername/QuantumEngine.git
+      cd QuantumEngine
+
+3. **Install development dependencies**:
+
+   .. code-block:: bash
+
+      pip install -e .[dev,all]
+
+4. **Set up pre-commit hooks** (optional but recommended):
+
+   .. code-block:: bash
+
+      pre-commit install
+
+Running Tests
+-------------
+
+QuantumEngine has both unit tests and integration tests:
+
+.. code-block:: bash
+
+   # Run all tests
+   pytest
+
+   # Run only working tests (recommended for development)
+   pytest tests/working/
+
+   # Run tests for specific backend
+   pytest tests/working/test_clickhouse_simple_working.py
+   pytest tests/working/test_working_surrealdb_backend.py
+
+   # Run with coverage
+   pytest --cov=quantumengine tests/working/
+
+Code Style
+----------
+
+We use several tools to maintain code quality:
+
+.. code-block:: bash
+
+   # Format code with black
+   black src/ tests/
+
+   # Sort imports with isort  
+   isort src/ tests/
+
+   # Lint with ruff
+   ruff check src/ tests/
+
+   # Type checking with mypy
+   mypy src/
+
+Documentation
+-------------
+
+To work on documentation:
+
+.. code-block:: bash
+
+   cd docs
+   pip install -r requirements.txt
+   
+   # Build documentation
+   make html
+   
+   # Live reload for development
+   make livehtml
+
+See :doc:`docs/README` for detailed documentation guidelines.
+
+Contribution Guidelines
+-----------------------
+
+Code Contributions
+~~~~~~~~~~~~~~~~~~
+
+1. **Create a feature branch** from main:
+
+   .. code-block:: bash
+
+      git checkout -b feature/your-feature-name
+
+2. **Write tests** for your changes
+3. **Ensure all tests pass**
+4. **Update documentation** if needed
+5. **Submit a pull request**
+
+Pull Request Process
+~~~~~~~~~~~~~~~~~~~~
+
+1. **Describe your changes** clearly in the PR description
+2. **Reference any related issues**
+3. **Ensure CI passes** (tests, linting, type checking)
+4. **Request review** from maintainers
+5. **Address feedback** promptly
+
+Types of Contributions
+----------------------
+
+Bug Reports
+~~~~~~~~~~~
+
+When reporting bugs, please include:
+
+- **Clear description** of the issue
+- **Steps to reproduce** the problem
+- **Expected vs actual behavior**
+- **Environment details** (Python version, OS, backend versions)
+- **Minimal code example** if possible
+
+Feature Requests
+~~~~~~~~~~~~~~~~
+
+For new features:
+
+- **Describe the use case** clearly
+- **Explain why** the feature would be valuable
+- **Consider backwards compatibility**
+- **Propose an API design** if applicable
+
+Documentation Improvements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Fix typos and grammatical errors
+- Add missing examples
+- Improve clarity of explanations
+- Update outdated information
+
+Backend Support
+~~~~~~~~~~~~~~~
+
+Adding support for new databases:
+
+1. **Study existing backends** (ClickHouse, SurrealDB)
+2. **Implement base backend interface**
+3. **Add comprehensive tests**
+4. **Document backend-specific features**
+5. **Update installation guide**
+
+Development Standards
+--------------------
+
+Code Quality
+~~~~~~~~~~~~
+
+- **Write clear, readable code**
+- **Add docstrings** to all public functions/classes
+- **Use type hints** throughout
+- **Follow Python naming conventions**
+- **Keep functions focused** and small
+
+Testing
+~~~~~~~
+
+- **Write tests** for all new functionality
+- **Aim for high test coverage**
+- **Use descriptive test names**
+- **Test both success and failure cases**
+- **Include integration tests** for database operations
+
+Documentation
+~~~~~~~~~~~~~
+
+- **Document all public APIs**
+- **Include usage examples**
+- **Keep documentation up-to-date**
+- **Use clear, concise language**
+
+Release Process
+---------------
+
+QuantumEngine follows semantic versioning:
+
+- **Major version** (1.0.0): Breaking changes
+- **Minor version** (0.1.0): New features, backwards compatible  
+- **Patch version** (0.1.1): Bug fixes, backwards compatible
+
+Security
+--------
+
+- **Never commit secrets** or credentials
+- **Use environment variables** for configuration
+- **Report security issues** privately to maintainers
+- **Follow secure coding practices**
+
+Community
+---------
+
+- **Be respectful** and inclusive
+- **Help others** in discussions
+- **Share knowledge** and experiences
+- **Follow the code of conduct**
+
+Getting Help
+------------
+
+If you need help with contributions:
+
+- **Check existing issues** and discussions
+- **Ask questions** in GitHub Discussions
+- **Join our community** channels
+- **Contact maintainers** directly for complex issues
+
+Thank you for contributing to QuantumEngine! 🚀
