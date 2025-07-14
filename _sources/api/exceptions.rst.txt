@@ -1,0 +1,579 @@
+.. _api-exceptions:
+
+===============
+Exceptions API
+===============
+
+This section provides the complete API reference for QuantumEngine's exception system.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Core Exceptions Module
+----------------------
+
+.. automodule:: quantumengine.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Base Exception Classes
+----------------------
+
+QuantumEngineException
+~~~~~~~~~~~~~~~~~~~~~~
+
+Base exception class for all QuantumEngine exceptions.
+
+.. autoclass:: quantumengine.exceptions.QuantumEngineException
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Validation Exceptions
+---------------------
+
+ValidationError
+~~~~~~~~~~~~~~~
+
+Base class for validation-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.ValidationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+FieldValidationError
+~~~~~~~~~~~~~~~~~~~~
+
+Raised when field validation fails.
+
+.. autoclass:: quantumengine.exceptions.FieldValidationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DocumentValidationError
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Raised when document-level validation fails.
+
+.. autoclass:: quantumengine.exceptions.DocumentValidationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Database Exceptions
+-------------------
+
+DatabaseError
+~~~~~~~~~~~~~
+
+Base class for database-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.DatabaseError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ConnectionError
+~~~~~~~~~~~~~~~
+
+Raised when database connection fails.
+
+.. autoclass:: quantumengine.exceptions.ConnectionError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+QueryError
+~~~~~~~~~~
+
+Raised when query execution fails.
+
+.. autoclass:: quantumengine.exceptions.QueryError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TransactionError
+~~~~~~~~~~~~~~~~
+
+Raised when transaction operations fail.
+
+.. autoclass:: quantumengine.exceptions.TransactionError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Backend-Specific Exceptions
+---------------------------
+
+BackendError
+~~~~~~~~~~~~
+
+Base class for backend-specific exceptions.
+
+.. autoclass:: quantumengine.exceptions.BackendError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+SurrealDBError
+~~~~~~~~~~~~~~
+
+SurrealDB-specific exception.
+
+.. autoclass:: quantumengine.exceptions.SurrealDBError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ClickHouseError
+~~~~~~~~~~~~~~~
+
+ClickHouse-specific exception.
+
+.. autoclass:: quantumengine.exceptions.ClickHouseError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Document Exceptions
+-------------------
+
+DocumentError
+~~~~~~~~~~~~~
+
+Base class for document-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.DocumentError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DoesNotExist
+~~~~~~~~~~~~
+
+Raised when querying for a non-existent object.
+
+.. autoclass:: quantumengine.exceptions.DoesNotExist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+MultipleObjectsReturned
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Raised when get() returns multiple objects.
+
+.. autoclass:: quantumengine.exceptions.MultipleObjectsReturned
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DocumentIntegrityError
+~~~~~~~~~~~~~~~~~~~~~~
+
+Raised when document integrity constraints are violated.
+
+.. autoclass:: quantumengine.exceptions.DocumentIntegrityError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Configuration Exceptions
+------------------------
+
+ConfigurationError
+~~~~~~~~~~~~~~~~~~
+
+Base class for configuration-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.ConfigurationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+BackendConfigurationError
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Raised when backend configuration is invalid.
+
+.. autoclass:: quantumengine.exceptions.BackendConfigurationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+FieldConfigurationError
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Raised when field configuration is invalid.
+
+.. autoclass:: quantumengine.exceptions.FieldConfigurationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Field-Specific Exceptions
+-------------------------
+
+Field validation exceptions for specific field types.
+
+StringFieldError
+~~~~~~~~~~~~~~~~
+
+String field validation errors.
+
+.. autoclass:: quantumengine.exceptions.StringFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+NumberFieldError
+~~~~~~~~~~~~~~~~
+
+Number field validation errors.
+
+.. autoclass:: quantumengine.exceptions.NumberFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DateTimeFieldError
+~~~~~~~~~~~~~~~~~~
+
+DateTime field validation errors.
+
+.. autoclass:: quantumengine.exceptions.DateTimeFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ReferenceFieldError
+~~~~~~~~~~~~~~~~~~~
+
+Reference field validation errors.
+
+.. autoclass:: quantumengine.exceptions.ReferenceFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ListFieldError
+~~~~~~~~~~~~~~
+
+List field validation errors.
+
+.. autoclass:: quantumengine.exceptions.ListFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DictFieldError
+~~~~~~~~~~~~~~
+
+Dictionary field validation errors.
+
+.. autoclass:: quantumengine.exceptions.DictFieldError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query-Specific Exceptions
+-------------------------
+
+Query system exceptions for specific operations.
+
+FilterError
+~~~~~~~~~~~
+
+Raised when query filtering fails.
+
+.. autoclass:: quantumengine.exceptions.FilterError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+LookupError
+~~~~~~~~~~~
+
+Raised when field lookup operations fail.
+
+.. autoclass:: quantumengine.exceptions.LookupError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+AggregationError
+~~~~~~~~~~~~~~~~
+
+Raised when aggregation operations fail.
+
+.. autoclass:: quantumengine.exceptions.AggregationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+RelationError
+~~~~~~~~~~~~~
+
+Raised when relationship operations fail.
+
+.. autoclass:: quantumengine.exceptions.RelationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Schema Exceptions
+-----------------
+
+Schema-related exceptions.
+
+SchemaError
+~~~~~~~~~~~
+
+Base class for schema-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.SchemaError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+MigrationError
+~~~~~~~~~~~~~~
+
+Raised when schema migrations fail.
+
+.. autoclass:: quantumengine.exceptions.MigrationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+IndexError
+~~~~~~~~~~
+
+Raised when index operations fail.
+
+.. autoclass:: quantumengine.exceptions.IndexError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Security Exceptions
+-------------------
+
+Security-related exceptions.
+
+SecurityError
+~~~~~~~~~~~~~
+
+Base class for security-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.SecurityError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PermissionError
+~~~~~~~~~~~~~~~
+
+Raised when permission checks fail.
+
+.. autoclass:: quantumengine.exceptions.PermissionError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+AuthenticationError
+~~~~~~~~~~~~~~~~~~~
+
+Raised when authentication fails.
+
+.. autoclass:: quantumengine.exceptions.AuthenticationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Performance Exceptions
+----------------------
+
+Performance and optimization exceptions.
+
+PerformanceError
+~~~~~~~~~~~~~~~~
+
+Base class for performance-related exceptions.
+
+.. autoclass:: quantumengine.exceptions.PerformanceError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TimeoutError
+~~~~~~~~~~~~
+
+Raised when operations timeout.
+
+.. autoclass:: quantumengine.exceptions.TimeoutError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ResourceError
+~~~~~~~~~~~~~
+
+Raised when resource limits are exceeded.
+
+.. autoclass:: quantumengine.exceptions.ResourceError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Serialization Exceptions
+------------------------
+
+Data serialization and deserialization exceptions.
+
+SerializationError
+~~~~~~~~~~~~~~~~~~
+
+Base class for serialization exceptions.
+
+.. autoclass:: quantumengine.exceptions.SerializationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DeserializationError
+~~~~~~~~~~~~~~~~~~~~
+
+Raised when data deserialization fails.
+
+.. autoclass:: quantumengine.exceptions.DeserializationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+EncodingError
+~~~~~~~~~~~~~
+
+Raised when data encoding/decoding fails.
+
+.. autoclass:: quantumengine.exceptions.EncodingError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Exception Utilities
+-------------------
+
+Utility functions for exception handling.
+
+Exception Helpers
+~~~~~~~~~~~~~~~~~
+
+Helper functions for working with exceptions.
+
+.. autofunction:: quantumengine.exceptions.format_exception
+
+.. autofunction:: quantumengine.exceptions.get_exception_context
+
+.. autofunction:: quantumengine.exceptions.log_exception
+
+.. autofunction:: quantumengine.exceptions.handle_exception
+
+Exception Decorators
+~~~~~~~~~~~~~~~~~~~~
+
+Decorators for exception handling.
+
+.. autofunction:: quantumengine.exceptions.catch_exceptions
+
+.. autofunction:: quantumengine.exceptions.retry_on_exception
+
+.. autofunction:: quantumengine.exceptions.log_exceptions
+
+Custom Exception Base Classes
+------------------------------
+
+Base classes for creating custom exceptions.
+
+ApplicationError
+~~~~~~~~~~~~~~~~
+
+Base class for application-specific exceptions.
+
+.. autoclass:: quantumengine.exceptions.ApplicationError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+BusinessLogicError
+~~~~~~~~~~~~~~~~~~
+
+Base class for business logic exceptions.
+
+.. autoclass:: quantumengine.exceptions.BusinessLogicError
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Exception Context Management
+----------------------------
+
+Context managers for exception handling.
+
+ExceptionContext
+~~~~~~~~~~~~~~~~
+
+Context manager for exception handling and logging.
+
+.. autoclass:: quantumengine.exceptions.ExceptionContext
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ErrorBoundary
+~~~~~~~~~~~~~
+
+Error boundary for isolating exceptions.
+
+.. autoclass:: quantumengine.exceptions.ErrorBoundary
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Exception Reporting
+-------------------
+
+Exception reporting and monitoring utilities.
+
+ExceptionReporter
+~~~~~~~~~~~~~~~~~
+
+Report exceptions to external services.
+
+.. autoclass:: quantumengine.exceptions.ExceptionReporter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ExceptionMetrics
+~~~~~~~~~~~~~~~~
+
+Collect metrics about exceptions.
+
+.. autoclass:: quantumengine.exceptions.ExceptionMetrics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+See Also
+--------
+
+* :doc:`/exceptions/index` - Comprehensive exceptions guide
+* :doc:`/fields/index` - Field validation and exceptions
+* :doc:`/query/index` - Query exceptions and error handling
+* :doc:`/backends/index` - Backend-specific exception handling

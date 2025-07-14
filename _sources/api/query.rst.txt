@@ -1,0 +1,572 @@
+.. _api-query:
+
+===============
+Query System API
+===============
+
+This section provides the complete API reference for QuantumEngine's query system.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Base Query Classes
+------------------
+
+.. automodule:: quantumengine.query.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+QuerySet
+~~~~~~~~
+
+The main query interface for database operations.
+
+.. autoclass:: quantumengine.query.base.QuerySet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Manager
+~~~~~~~
+
+Document manager providing query interface.
+
+.. autoclass:: quantumengine.query.base.Manager
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query Operations
+----------------
+
+Filtering
+~~~~~~~~~
+
+Query filtering and lookup operations.
+
+.. autoclass:: quantumengine.query.base.FilterMixin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.base.filter
+
+.. autofunction:: quantumengine.query.base.exclude
+
+.. autofunction:: quantumengine.query.base.get
+
+Ordering
+~~~~~~~~
+
+Query ordering and sorting operations.
+
+.. autoclass:: quantumengine.query.base.OrderMixin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.base.order_by
+
+.. autofunction:: quantumengine.query.base.reverse
+
+Limiting
+~~~~~~~~
+
+Query limiting and pagination operations.
+
+.. autoclass:: quantumengine.query.base.LimitMixin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.base.limit
+
+.. autofunction:: quantumengine.query.base.offset
+
+.. autofunction:: quantumengine.query.base.first
+
+.. autofunction:: quantumengine.query.base.last
+
+Query Expressions
+-----------------
+
+.. automodule:: quantumengine.query_expressions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Q Objects
+~~~~~~~~~
+
+Complex query construction with Q objects.
+
+.. autoclass:: quantumengine.query_expressions.Q
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Field References
+~~~~~~~~~~~~~~~~
+
+Reference fields in queries and expressions.
+
+.. autoclass:: quantumengine.query_expressions.F
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Conditional Expressions
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Conditional logic in queries.
+
+.. autoclass:: quantumengine.query_expressions.Case
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.When
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.Value
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Lookup Operations
+~~~~~~~~~~~~~~~~~
+
+Field lookup operations for filtering.
+
+.. autoclass:: quantumengine.query_expressions.Lookup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.Exact
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.Contains
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.StartsWith
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.EndsWith
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.GreaterThan
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.LessThan
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.In
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query_expressions.IsNull
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Aggregation
+-----------
+
+.. automodule:: quantumengine.aggregation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Aggregate Functions
+~~~~~~~~~~~~~~~~~~~
+
+Statistical and mathematical aggregate functions.
+
+.. autoclass:: quantumengine.aggregation.Aggregate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Count
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Sum
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Avg
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Max
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Min
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.StdDev
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.aggregation.Variance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Grouping Operations
+~~~~~~~~~~~~~~~~~~~
+
+Group by and annotation operations.
+
+.. autofunction:: quantumengine.aggregation.annotate
+
+.. autofunction:: quantumengine.aggregation.aggregate
+
+.. autofunction:: quantumengine.aggregation.values
+
+.. autofunction:: quantumengine.aggregation.values_list
+
+Relationship Queries
+--------------------
+
+.. automodule:: quantumengine.query.relation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Related Object Selection
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Optimize relationship queries with select_related and prefetch_related.
+
+.. autoclass:: quantumengine.query.relation.RelatedMixin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.relation.select_related
+
+.. autofunction:: quantumengine.query.relation.prefetch_related
+
+Reverse Relationships
+~~~~~~~~~~~~~~~~~~~~~
+
+Handle reverse foreign key relationships.
+
+.. autoclass:: quantumengine.query.relation.ReverseRelation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query.relation.ReverseManyToOneDescriptor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Graph Traversal
+~~~~~~~~~~~~~~~
+
+SurrealDB-specific graph traversal operations.
+
+.. autoclass:: quantumengine.query.relation.GraphTraversal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.relation.traverse
+
+.. autofunction:: quantumengine.query.relation.relate
+
+Backend-Specific Query Features
+-------------------------------
+
+SurrealDB Queries
+~~~~~~~~~~~~~~~~~
+
+SurrealDB-specific query features and optimizations.
+
+.. autoclass:: quantumengine.query.surrealdb.SurrealDBQuerySet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.surrealdb.live
+
+.. autofunction:: quantumengine.query.surrealdb.subscribe
+
+.. autofunction:: quantumengine.query.surrealdb.graph_traverse
+
+ClickHouse Queries
+~~~~~~~~~~~~~~~~~~
+
+ClickHouse-specific query features and optimizations.
+
+.. autoclass:: quantumengine.query.clickhouse.ClickHouseQuerySet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.clickhouse.window_function
+
+.. autofunction:: quantumengine.query.clickhouse.array_operations
+
+.. autofunction:: quantumengine.query.clickhouse.time_series
+
+Raw Queries
+-----------
+
+Execute raw database queries when needed.
+
+.. autoclass:: quantumengine.query.raw.RawQuerySet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.raw.raw
+
+.. autofunction:: quantumengine.query.raw.execute
+
+Query Compilation
+-----------------
+
+Query compilation and optimization.
+
+.. automodule:: quantumengine.query.compiler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query Compiler
+~~~~~~~~~~~~~~
+
+Base query compiler for all backends.
+
+.. autoclass:: quantumengine.query.compiler.QueryCompiler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Backend Compilers
+~~~~~~~~~~~~~~~~~
+
+Backend-specific query compilation.
+
+.. autoclass:: quantumengine.query.compiler.SurrealDBCompiler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: quantumengine.query.compiler.ClickHouseCompiler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query Optimization
+------------------
+
+Query analysis and optimization tools.
+
+.. automodule:: quantumengine.query.optimizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query Analyzer
+~~~~~~~~~~~~~~
+
+Analyze query performance and structure.
+
+.. autoclass:: quantumengine.query.optimizer.QueryAnalyzer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.optimizer.explain
+
+.. autofunction:: quantumengine.query.optimizer.analyze
+
+Performance Monitoring
+~~~~~~~~~~~~~~~~~~~~~~
+
+Monitor query performance and statistics.
+
+.. autoclass:: quantumengine.query.optimizer.QueryStats
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.optimizer.profile
+
+.. autofunction:: quantumengine.query.optimizer.benchmark
+
+Transaction Support
+-------------------
+
+Transaction management for queries.
+
+.. automodule:: quantumengine.query.transaction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Transaction Context
+~~~~~~~~~~~~~~~~~~~
+
+Atomic transaction operations.
+
+.. autoclass:: quantumengine.query.transaction.TransactionContext
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.transaction.atomic
+
+.. autofunction:: quantumengine.query.transaction.begin
+
+.. autofunction:: quantumengine.query.transaction.commit
+
+.. autofunction:: quantumengine.query.transaction.rollback
+
+Search Operations
+-----------------
+
+Full-text search and indexing.
+
+.. automodule:: quantumengine.query.search
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Text Search
+~~~~~~~~~~~
+
+Full-text search capabilities.
+
+.. autoclass:: quantumengine.query.search.SearchMixin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.search.search
+
+.. autofunction:: quantumengine.query.search.search_rank
+
+Vector Search
+~~~~~~~~~~~~~
+
+Vector similarity search operations.
+
+.. autoclass:: quantumengine.query.search.VectorSearch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. autofunction:: quantumengine.query.search.vector_search
+
+.. autofunction:: quantumengine.query.search.similarity
+
+Bulk Operations
+---------------
+
+Efficient bulk database operations.
+
+.. automodule:: quantumengine.query.bulk
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Bulk Creation
+~~~~~~~~~~~~~
+
+Bulk insert operations.
+
+.. autofunction:: quantumengine.query.bulk.bulk_create
+
+.. autofunction:: quantumengine.query.bulk.bulk_insert
+
+Bulk Updates
+~~~~~~~~~~~~
+
+Bulk update operations.
+
+.. autofunction:: quantumengine.query.bulk.bulk_update
+
+.. autofunction:: quantumengine.query.bulk.update_or_create
+
+Bulk Deletion
+~~~~~~~~~~~~~
+
+Bulk delete operations.
+
+.. autofunction:: quantumengine.query.bulk.bulk_delete
+
+.. autofunction:: quantumengine.query.bulk.delete
+
+Query Utilities
+---------------
+
+Utility functions for query operations.
+
+.. automodule:: quantumengine.query.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query Helpers
+~~~~~~~~~~~~~
+
+Helper functions for common query operations.
+
+.. autofunction:: quantumengine.query.utils.get_or_create
+
+.. autofunction:: quantumengine.query.utils.update_or_create
+
+.. autofunction:: quantumengine.query.utils.exists
+
+.. autofunction:: quantumengine.query.utils.count
+
+Field Validation
+~~~~~~~~~~~~~~~~
+
+Query field validation utilities.
+
+.. autofunction:: quantumengine.query.utils.validate_field
+
+.. autofunction:: quantumengine.query.utils.validate_lookup
+
+.. autofunction:: quantumengine.query.utils.validate_ordering
+
+See Also
+--------
+
+* :doc:`/query/index` - Comprehensive query system guide
+* :doc:`/backends/index` - Backend-specific query features
+* :doc:`/fields/index` - Field types and query compatibility
+* :doc:`/exceptions/index` - Exception handling for queries

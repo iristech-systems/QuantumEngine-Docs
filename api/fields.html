@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/fields';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Fields" href="../fields/index.html" />
+    <link rel="next" title="Backends API" href="backends.html" />
     <link rel="prev" title="API Reference" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,8 +180,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -193,6 +193,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
     Contributing
@@ -343,8 +364,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -440,6 +482,15 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fields API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="backends.html">Backends API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="query.html">Query System API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions API</a></li>
 </ul>
 </div>
 </nav></div>
@@ -1726,7 +1777,7 @@ a dict with ‘type’ and ‘coordinates’ fields.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the geometry data is invalid or improperly formatted.</p>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the geometry data is invalid or improperly formatted.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2183,7 +2234,7 @@ id_or_name = LiteralField([IntField(), StringField()])</p>
 <dd class="field-even"><p>The validated value</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the value is not one of the allowed values or types</p>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the value is not one of the allowed values or types</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a></p>
@@ -2769,7 +2820,7 @@ values that can be validated by the respective field types.</p>
 <dd class="field-even"><p>The validated range value</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the value is not a valid range</p>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the value is not a valid range</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>] | None</p>
@@ -4384,7 +4435,7 @@ a dict with ‘type’ and ‘coordinates’ fields.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the geometry data is invalid or improperly formatted.</p>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the geometry data is invalid or improperly formatted.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4853,7 +4904,7 @@ using the appropriate field type if the value is not a literal.</p>
 <dd class="field-even"><p>The validated value</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the value is not one of the allowed values or types</p>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the value is not one of the allowed values or types</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a></p>
@@ -5396,7 +5447,7 @@ values that can be validated by the respective field types.</p>
 <dd class="field-even"><p>The validated range value</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="index.html#quantumengine.ValidationError" title="quantumengine.ValidationError"><strong>ValidationError</strong></a> – If the value is not a valid range</p>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#id0" title="quantumengine.exceptions.ValidationError"><strong>ValidationError</strong></a> – If the value is not a valid range</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>] | None</p>

@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -508,7 +550,7 @@
 
 
 <div class="viewcode-block" id="QuantumEngineError">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QuantumEngineError">[docs]</a>
+<a class="viewcode-back" href="../../api/exceptions.html#quantumengine.exceptions.QuantumEngineError">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">QuantumEngineError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base exception class for QuantumEngine.</span>
 
@@ -519,7 +561,7 @@
 
 
 <div class="viewcode-block" id="ConnectionError">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.ConnectionError">[docs]</a>
+<a class="viewcode-back" href="../../api/exceptions.html#quantumengine.exceptions.ConnectionError">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ConnectionError</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a connection to the database cannot be established.</span>
 
@@ -531,7 +573,7 @@
 
 
 <div class="viewcode-block" id="ValidationError">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.ValidationError">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.exceptions.ValidationError">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ValidationError</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when document validation fails.</span>
 
@@ -544,7 +586,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="ValidationError.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.ValidationError.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.exceptions.ValidationError.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">field_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a ValidationError.</span>
 
@@ -561,7 +603,7 @@
 
 
 <div class="viewcode-block" id="DoesNotExist">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DoesNotExist">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.exceptions.DoesNotExist">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">DoesNotExist</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a document does not exist in the database.</span>
 
@@ -574,7 +616,7 @@
 
 
 <div class="viewcode-block" id="MultipleObjectsReturned">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MultipleObjectsReturned">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.exceptions.MultipleObjectsReturned">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MultipleObjectsReturned</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when multiple documents are returned when only one was expected.</span>
 
@@ -587,7 +629,7 @@
 
 
 <div class="viewcode-block" id="OperationError">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.OperationError">[docs]</a>
+<a class="viewcode-back" href="../../api/exceptions.html#quantumengine.exceptions.OperationError">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">OperationError</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a database operation fails.</span>
 
@@ -600,7 +642,7 @@
 
 
 <div class="viewcode-block" id="InvalidQueryError">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.InvalidQueryError">[docs]</a>
+<a class="viewcode-back" href="../../api/exceptions.html#quantumengine.exceptions.InvalidQueryError">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidQueryError</span><span class="p">(</span><span class="n">QuantumEngineError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a query is invalid.</span>
 

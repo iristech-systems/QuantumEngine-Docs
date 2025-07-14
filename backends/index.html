@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Backends &#8212; QuantumEngine v0.1.2</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d017478c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/documentation_options.js?v=b14783f5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'backends/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fields" href="../fields/index.html" />
+    <link rel="prev" title="Exceptions API" href="../api/exceptions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.2" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="QuantumEngine v0.1.2 - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="QuantumEngine v0.1.2 - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quickstart.html">
+    Quick Start Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Tutorial
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Backends
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/iristech-systems/QuantumEngine">
+    GitHub Repository
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pypi.org/project/quantumengine/">
+    PyPI Package
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/iristech-systems/QuantumEngine/issues">
+    Issue Tracker
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quickstart.html">
+    Quick Start Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Tutorial
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/iristech-systems/QuantumEngine">
+    GitHub Repository
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pypi.org/project/quantumengine/">
+    PyPI Package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/iristech-systems/QuantumEngine/issues">
+    Issue Tracker
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/iristech-systems/QuantumEngine/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://pypi.org/project/quantumengine/" class="nav-link">PyPI</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Backends</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="backends">
+<span id="id1"></span><h1>Backends<a class="headerlink" href="#backends" title="Link to this heading"><span>¶</span></a></h1>
+<p>QuantumEngine provides a unified interface to multiple database backends, allowing you to switch between different storage systems while maintaining consistent API semantics.</p>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id6">Overview</a></p></li>
+<li><p><a class="reference internal" href="#backend-selection" id="id7">Backend Selection</a></p>
+<ul>
+<li><p><a class="reference internal" href="#document-level-backend" id="id8">Document-Level Backend</a></p></li>
+<li><p><a class="reference internal" href="#global-backend-configuration" id="id9">Global Backend Configuration</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#surrealdb-backend" id="id10">SurrealDB Backend</a></p>
+<ul>
+<li><p><a class="reference internal" href="#features" id="id11">Features</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id12">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#data-types" id="id13">Data Types</a></p></li>
+<li><p><a class="reference internal" href="#example-usage" id="id14">Example Usage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#clickhouse-backend" id="id15">ClickHouse Backend</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id16">Features</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id17">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id18">Data Types</a></p></li>
+<li><p><a class="reference internal" href="#specialized-fields" id="id19">Specialized Fields</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id20">Example Usage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#backend-comparison" id="id21">Backend Comparison</a></p></li>
+<li><p><a class="reference internal" href="#multi-backend-applications" id="id22">Multi-Backend Applications</a></p></li>
+<li><p><a class="reference internal" href="#connection-management" id="id23">Connection Management</a></p></li>
+<li><p><a class="reference internal" href="#migration-and-data-transfer" id="id24">Migration and Data Transfer</a></p></li>
+<li><p><a class="reference internal" href="#performance-considerations" id="id25">Performance Considerations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#surrealdb-best-practices" id="id26">SurrealDB Best Practices</a></p></li>
+<li><p><a class="reference internal" href="#clickhouse-best-practices" id="id27">ClickHouse Best Practices</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#see-also" id="id28">See Also</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"><span>¶</span></a></h2>
+<p>QuantumEngine supports multiple database backends through a pluggable architecture:</p>
+<ul class="simple">
+<li><p><strong>SurrealDB</strong>: A multi-model database optimized for real-time applications</p></li>
+<li><p><strong>ClickHouse</strong>: A column-oriented database for analytics and OLAP workloads</p></li>
+</ul>
+<p>Each backend provides specific optimizations while maintaining API compatibility through the Document ORM layer.</p>
+</section>
+<section id="backend-selection">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Backend Selection</a><a class="headerlink" href="#backend-selection" title="Link to this heading"><span>¶</span></a></h2>
+<p>Backends can be specified at the document level or globally:</p>
+<section id="document-level-backend">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Document-Level Backend</a><a class="headerlink" href="#document-level-backend" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">IntField</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;surrealdb&#39;</span>  <span class="c1"># Use SurrealDB</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">IntField</span><span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Analytics</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;clickhouse&#39;</span>  <span class="c1"># Use ClickHouse</span>
+
+    <span class="n">event_name</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="global-backend-configuration">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Global Backend Configuration</a><a class="headerlink" href="#global-backend-configuration" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure_backend</span>
+
+<span class="c1"># Configure default backend</span>
+<span class="n">configure_backend</span><span class="p">(</span><span class="s1">&#39;surrealdb&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;ws://localhost:8000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;namespace&#39;</span><span class="p">:</span> <span class="s1">&#39;my_app&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;production&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="surrealdb-backend">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">SurrealDB Backend</a><a class="headerlink" href="#surrealdb-backend" title="Link to this heading"><span>¶</span></a></h2>
+<p>SurrealDB is a multi-model database that supports:</p>
+<ul class="simple">
+<li><p><strong>Document storage</strong> with flexible schemas</p></li>
+<li><p><strong>Graph relationships</strong> between documents</p></li>
+<li><p><strong>Real-time subscriptions</strong> for live data</p></li>
+<li><p><strong>Advanced querying</strong> with SurrealQL</p></li>
+</ul>
+<section id="features">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Features</a><a class="headerlink" href="#features" title="Link to this heading"><span>¶</span></a></h3>
+<ul class="simple">
+<li><p><strong>Schema flexibility</strong>: Dynamic document structures</p></li>
+<li><p><strong>Relations</strong>: First-class support for document relationships</p></li>
+<li><p><strong>Real-time</strong>: Live queries and subscriptions</p></li>
+<li><p><strong>Multi-model</strong>: Document, graph, and key-value data models</p></li>
+<li><p><strong>ACID transactions</strong>: Full transactional support</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure_backend</span>
+
+<span class="n">configure_backend</span><span class="p">(</span><span class="s1">&#39;surrealdb&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;ws://localhost:8000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;namespace&#39;</span><span class="p">:</span> <span class="s1">&#39;my_namespace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;my_database&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;secret&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="data-types">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Data Types</a><a class="headerlink" href="#data-types" title="Link to this heading"><span>¶</span></a></h3>
+<p>SurrealDB supports rich data types:</p>
+<ul class="simple">
+<li><p><strong>Basic types</strong>: String, number, boolean, datetime</p></li>
+<li><p><strong>Complex types</strong>: Arrays, objects, geometries</p></li>
+<li><p><strong>Relations</strong>: Links between documents</p></li>
+<li><p><strong>Record IDs</strong>: Strongly-typed identifiers</p></li>
+</ul>
+</section>
+<section id="example-usage">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Example Usage</a><a class="headerlink" href="#example-usage" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;surrealdb&#39;</span>
+
+    <span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+    <span class="n">friends</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">ReferenceField</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">))</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">GeometryField</span><span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Post</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;surrealdb&#39;</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">ReferenceField</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Create relationships</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">&#39;john@example.com&#39;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;My first post&#39;</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+<span class="n">post</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="clickhouse-backend">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">ClickHouse Backend</a><a class="headerlink" href="#clickhouse-backend" title="Link to this heading"><span>¶</span></a></h2>
+<p>ClickHouse is optimized for analytical workloads and provides:</p>
+<ul class="simple">
+<li><p><strong>Column-oriented storage</strong> for fast analytical queries</p></li>
+<li><p><strong>Compression</strong> for efficient storage</p></li>
+<li><p><strong>Materialized views</strong> for pre-computed aggregations</p></li>
+<li><p><strong>Distributed processing</strong> for large datasets</p></li>
+</ul>
+<section id="id2">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Features</a><a class="headerlink" href="#id2" title="Link to this heading"><span>¶</span></a></h3>
+<ul class="simple">
+<li><p><strong>High performance</strong>: Optimized for analytical queries</p></li>
+<li><p><strong>Compression</strong>: Efficient storage with various compression algorithms</p></li>
+<li><p><strong>Scalability</strong>: Horizontal scaling capabilities</p></li>
+<li><p><strong>SQL compatibility</strong>: Familiar SQL syntax with extensions</p></li>
+<li><p><strong>Materialized views</strong>: Pre-computed aggregations</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Configuration</a><a class="headerlink" href="#id3" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure_backend</span>
+
+<span class="n">configure_backend</span><span class="p">(</span><span class="s1">&#39;clickhouse&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">9000</span><span class="p">,</span>
+    <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;my_database&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Data Types</a><a class="headerlink" href="#id4" title="Link to this heading"><span>¶</span></a></h3>
+<p>ClickHouse provides specialized data types:</p>
+<ul class="simple">
+<li><p><strong>Numeric</strong>: Int8/16/32/64, UInt8/16/32/64, Float32/64, Decimal</p></li>
+<li><p><strong>String</strong>: String, FixedString, LowCardinality(String)</p></li>
+<li><p><strong>DateTime</strong>: DateTime, DateTime64, Date</p></li>
+<li><p><strong>Arrays</strong>: Array(T) for any type T</p></li>
+<li><p><strong>Nullable</strong>: Nullable(T) for optional values</p></li>
+</ul>
+</section>
+<section id="specialized-fields">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Specialized Fields</a><a class="headerlink" href="#specialized-fields" title="Link to this heading"><span>¶</span></a></h3>
+<p>ClickHouse backend includes optimized field types:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields.clickhouse</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Event</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;clickhouse&#39;</span>
+
+    <span class="n">event_type</span> <span class="o">=</span> <span class="n">LowCardinalityField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>  <span class="c1"># Optimized for repeated values</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">ArrayField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>  <span class="c1"># Native array support</span>
+    <span class="n">session_id</span> <span class="o">=</span> <span class="n">FixedStringField</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>  <span class="c1"># Fixed-length strings</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Example Usage</a><a class="headerlink" href="#id5" title="Link to this heading"><span>¶</span></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.fields.clickhouse</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">WebEvent</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;clickhouse&#39;</span>
+
+    <span class="n">event_type</span> <span class="o">=</span> <span class="n">LowCardinalityField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">session_id</span> <span class="o">=</span> <span class="n">FixedStringField</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">URLField</span><span class="p">()</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="c1"># ClickHouse-specific optimizations</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;MergeTree&#39;</span>
+        <span class="n">order_by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">]</span>
+        <span class="n">partition_by</span> <span class="o">=</span> <span class="s1">&#39;toYYYYMM(timestamp)&#39;</span>
+
+<span class="c1"># Bulk insert for analytics</span>
+<span class="n">events</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">WebEvent</span><span class="p">(</span>
+        <span class="n">event_type</span><span class="o">=</span><span class="s1">&#39;page_view&#39;</span><span class="p">,</span>
+        <span class="n">user_id</span><span class="o">=</span><span class="n">uuid4</span><span class="p">(),</span>
+        <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://example.com/page1&#39;</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">WebEvent</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">bulk_create</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="backend-comparison">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Backend Comparison</a><a class="headerlink" href="#backend-comparison" title="Link to this heading"><span>¶</span></a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.3%" />
+<col style="width: 36.8%" />
+<col style="width: 36.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>SurrealDB</p></th>
+<th class="head"><p>ClickHouse</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Use Case</strong></p></td>
+<td><p>Real-time applications, flexible schemas</p></td>
+<td><p>Analytics, time-series data, reporting</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data Model</strong></p></td>
+<td><p>Document, Graph, Key-Value</p></td>
+<td><p>Columnar, Relational</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Relationships</strong></p></td>
+<td><p>Native graph relations</p></td>
+<td><p>Foreign keys, JOINs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Real-time</strong></p></td>
+<td><p>Live queries, subscriptions</p></td>
+<td><p>Limited real-time capabilities</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scalability</strong></p></td>
+<td><p>Horizontal scaling</p></td>
+<td><p>Excellent for read-heavy workloads</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Schema</strong></p></td>
+<td><p>Flexible, schemaless</p></td>
+<td><p>Fixed schema, strongly typed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Transactions</strong></p></td>
+<td><p>ACID transactions</p></td>
+<td><p>Limited transaction support</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Query Language</strong></p></td>
+<td><p>SurrealQL</p></td>
+<td><p>SQL with extensions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="multi-backend-applications">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Multi-Backend Applications</a><a class="headerlink" href="#multi-backend-applications" title="Link to this heading"><span>¶</span></a></h2>
+<p>You can use multiple backends in the same application:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># User data in SurrealDB for flexibility</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;surrealdb&#39;</span>
+
+    <span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+    <span class="n">friends</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">ReferenceField</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">))</span>
+
+<span class="c1"># Analytics data in ClickHouse for performance</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UserActivity</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">__backend__</span> <span class="o">=</span> <span class="s1">&#39;clickhouse&#39;</span>
+
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">LowCardinalityField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">DateTimeField</span><span class="p">()</span>
+    <span class="n">properties</span> <span class="o">=</span> <span class="n">DictField</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="connection-management">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">Connection Management</a><a class="headerlink" href="#connection-management" title="Link to this heading"><span>¶</span></a></h2>
+<p>QuantumEngine handles connection pooling and management automatically:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantumengine.connection</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_connection</span>
+
+<span class="c1"># Get connection for specific backend</span>
+<span class="n">surrealdb_conn</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">(</span><span class="s1">&#39;surrealdb&#39;</span><span class="p">)</span>
+<span class="n">clickhouse_conn</span> <span class="o">=</span> <span class="n">get_connection</span><span class="p">(</span><span class="s1">&#39;clickhouse&#39;</span><span class="p">)</span>
+
+<span class="c1"># Connections are automatically pooled and reused</span>
+</pre></div>
+</div>
+</section>
+<section id="migration-and-data-transfer">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Migration and Data Transfer</a><a class="headerlink" href="#migration-and-data-transfer" title="Link to this heading"><span>¶</span></a></h2>
+<p>Moving data between backends:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export from SurrealDB</span>
+<span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Transform and import to ClickHouse</span>
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="n">UserActivity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;migration&#39;</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-considerations">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Performance Considerations</a><a class="headerlink" href="#performance-considerations" title="Link to this heading"><span>¶</span></a></h2>
+<section id="surrealdb-best-practices">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">SurrealDB Best Practices</a><a class="headerlink" href="#surrealdb-best-practices" title="Link to this heading"><span>¶</span></a></h3>
+<ul class="simple">
+<li><p>Use indexes for frequently queried fields</p></li>
+<li><p>Leverage graph relationships for complex queries</p></li>
+<li><p>Use live queries for real-time features</p></li>
+<li><p>Batch operations when possible</p></li>
+</ul>
+</section>
+<section id="clickhouse-best-practices">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">ClickHouse Best Practices</a><a class="headerlink" href="#clickhouse-best-practices" title="Link to this heading"><span>¶</span></a></h3>
+<ul class="simple">
+<li><p>Use appropriate data types (LowCardinality for repeated values)</p></li>
+<li><p>Partition large tables by date/time</p></li>
+<li><p>Use materialized views for common aggregations</p></li>
+<li><p>Batch inserts for better performance</p></li>
+<li><p>Avoid frequent updates/deletes</p></li>
+</ul>
+</section>
+</section>
+<section id="see-also">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Link to this heading"><span>¶</span></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/backends.html"><span class="doc">Backends API</span></a> - Complete backends API reference</p></li>
+<li><p><a class="reference internal" href="../fields/index.html"><span class="doc">Fields</span></a> - Field types and backend-specific fields</p></li>
+<li><p><a class="reference internal" href="../query/index.html"><span class="doc">Query System</span></a> - Query system documentation</p></li>
+<li><p><a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> - Getting started with backends</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backend-selection">Backend Selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#document-level-backend">Document-Level Backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-backend-configuration">Global Backend Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surrealdb-backend">SurrealDB Backend</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse-backend">ClickHouse Backend</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-fields">Specialized Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backend-comparison">Backend Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-backend-applications">Multi-Backend Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-management">Connection Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-and-data-transfer">Migration and Data Transfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-considerations">Performance Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrealdb-best-practices">SurrealDB Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse-best-practices">ClickHouse Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/backends/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Iristech Systems.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

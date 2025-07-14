@@ -51,12 +51,12 @@ Query System
 .. toctree::
    :maxdepth: 2
 
-   queries
+   query
 
 Exceptions
 ----------
 
-.. automodule:: quantumengine.exceptions
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. toctree::
+   :maxdepth: 2
+
+   exceptions

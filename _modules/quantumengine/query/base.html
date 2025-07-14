@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -516,7 +558,7 @@
 
 
 <div class="viewcode-block" id="QuerySet">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">QuerySet</span><span class="p">(</span><span class="n">BaseQuerySet</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Query builder for SurrealDB with generic type safety.</span>
 
@@ -533,7 +575,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="QuerySet.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new QuerySet.</span>
 
@@ -552,7 +594,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.join">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.join">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.join">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_fields</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dereference_depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform a JOIN-like operation on a reference field using FETCH.</span>
 
@@ -618,7 +660,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.join_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.join_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.join_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">join_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_fields</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dereference_depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform a JOIN-like operation on a reference field synchronously using FETCH.</span>
 
@@ -713,7 +755,7 @@
         <span class="k">return</span> <span class="n">query</span>
 
 <div class="viewcode-block" id="QuerySet.all">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.all">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.all">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the query and return all results asynchronously.</span>
 
@@ -772,7 +814,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.all_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.all_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.all_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">all_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the query and return all results synchronously.</span>
 
@@ -803,7 +845,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.count">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.count">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.count">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Count documents matching the query asynchronously.</span>
 
@@ -830,7 +872,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.count_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.count_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.count_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">count_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Count documents matching the query synchronously.</span>
 
@@ -859,7 +901,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.get">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.get">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.get">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a single document matching the query asynchronously.</span>
 
@@ -889,7 +931,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.get_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.get_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.get_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dereference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a single document matching the query synchronously.</span>
 
@@ -919,7 +961,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.create">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.create">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.create">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new document asynchronously.</span>
 
@@ -951,7 +993,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.create_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.create_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.create_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">create_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new document synchronously.</span>
 
@@ -973,7 +1015,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.update">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.update">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.update">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Update documents matching the query asynchronously with performance optimizations.</span>
 
@@ -1042,7 +1084,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.update_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.update_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.update_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">update_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Update documents matching the query synchronously with performance optimizations.</span>
 
@@ -1097,7 +1139,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.delete">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.delete">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.delete">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete documents matching the query asynchronously with performance optimizations.</span>
 
@@ -1144,7 +1186,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.delete_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.delete_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.delete_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">delete_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete documents matching the query synchronously with performance optimizations.</span>
 
@@ -1193,7 +1235,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.bulk_create">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.bulk_create">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.bulk_create">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">bulk_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
                       <span class="n">validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">return_documents</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create multiple documents in a single operation asynchronously.</span>
@@ -1275,7 +1317,7 @@
 
 
 <div class="viewcode-block" id="QuerySet.bulk_create_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.bulk_create_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.bulk_create_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">bulk_create_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
                       <span class="n">validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">return_documents</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create multiple documents in a single operation synchronously.</span>
@@ -1340,7 +1382,7 @@
 
     
 <div class="viewcode-block" id="QuerySet.explain">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.explain">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.explain">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get query execution plan for performance analysis.</span>
 <span class="sd">        </span>
@@ -1367,7 +1409,7 @@
 
     
 <div class="viewcode-block" id="QuerySet.explain_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.explain_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.explain_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">explain_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get query execution plan for performance analysis synchronously.</span>
 <span class="sd">        </span>
@@ -1380,7 +1422,7 @@
 
     
 <div class="viewcode-block" id="QuerySet.suggest_indexes">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.QuerySet.suggest_indexes">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.QuerySet.suggest_indexes">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">suggest_indexes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Suggest indexes based on current query patterns.</span>
 <span class="sd">        </span>

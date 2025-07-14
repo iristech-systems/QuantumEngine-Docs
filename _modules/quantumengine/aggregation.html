@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -514,7 +556,7 @@
 
 
 <div class="viewcode-block" id="AggregationPipeline">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">AggregationPipeline</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Pipeline for building and executing aggregation queries.</span>
 <span class="sd">    </span>
@@ -523,7 +565,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <div class="viewcode-block" id="AggregationPipeline.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_set</span><span class="p">:</span> <span class="s1">&#39;QuerySet&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new AggregationPipeline.</span>
 <span class="sd">        </span>
@@ -537,7 +579,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.group">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.group">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.group">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">aggregations</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Group by fields and apply aggregations.</span>
 <span class="sd">        </span>
@@ -557,7 +599,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.project">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.project">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.project">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Select or compute fields to include in output.</span>
 <span class="sd">        </span>
@@ -575,7 +617,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.sort">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.sort">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.sort">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Sort results by fields.</span>
 <span class="sd">        </span>
@@ -593,7 +635,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.limit">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.limit">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.limit">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Limit number of results.</span>
 <span class="sd">        </span>
@@ -611,7 +653,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.skip">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.skip">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.skip">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">skip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Skip number of results.</span>
 <span class="sd">        </span>
@@ -629,7 +671,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.with_index">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.with_index">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.with_index">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">with_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Use the specified index for the query.</span>
 <span class="sd">        </span>
@@ -647,7 +689,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.build_query">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.build_query">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.build_query">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">build_query</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Build the SurrealQL query from the pipeline stages.</span>
 <span class="sd">        </span>
@@ -815,7 +857,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.execute">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.execute">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.execute">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the pipeline and return results.</span>
 <span class="sd">        </span>
@@ -839,7 +881,7 @@
 
         
 <div class="viewcode-block" id="AggregationPipeline.execute_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.AggregationPipeline.execute_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.AggregationPipeline.execute_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">execute_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the pipeline synchronously.</span>
 <span class="sd">        </span>

@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -508,19 +550,19 @@
 
 
 <div class="viewcode-block" id="DataGridQueryBuilder">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">DataGridQueryBuilder</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Build efficient SurrealDB queries for DataGrid endpoints&quot;&quot;&quot;</span>
     
 <div class="viewcode-block" id="DataGridQueryBuilder.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_class</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">document_class</span> <span class="o">=</span> <span class="n">document_class</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">queryset</span> <span class="o">=</span> <span class="n">document_class</span><span class="o">.</span><span class="n">objects</span></div>
 
     
 <div class="viewcode-block" id="DataGridQueryBuilder.apply_filters">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.apply_filters">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.apply_filters">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">apply_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply field filters to the queryset</span>
 <span class="sd">        </span>
@@ -534,7 +576,7 @@
 
     
 <div class="viewcode-block" id="DataGridQueryBuilder.apply_search">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.apply_search">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.apply_search">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">apply_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">search_fields</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply text search across multiple fields using contains operator</span>
 <span class="sd">        </span>
@@ -554,7 +596,7 @@
 
     
 <div class="viewcode-block" id="DataGridQueryBuilder.apply_sorting">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.apply_sorting">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.apply_sorting">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">apply_sorting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort_field</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sort_order</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;asc&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply sorting to the queryset</span>
 <span class="sd">        </span>
@@ -570,7 +612,7 @@
 
     
 <div class="viewcode-block" id="DataGridQueryBuilder.get_paginated_data">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.get_paginated_data">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.get_paginated_data">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_paginated_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get paginated data with total count</span>
 <span class="sd">        </span>
@@ -591,7 +633,7 @@
 
     
 <div class="viewcode-block" id="DataGridQueryBuilder.get_paginated_data_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.DataGridQueryBuilder.get_paginated_data_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.DataGridQueryBuilder.get_paginated_data_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_paginated_data_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Synchronous version of get_paginated_data&quot;&quot;&quot;</span>
         <span class="n">total</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queryset</span><span class="o">.</span><span class="n">count_sync</span><span class="p">()</span>
@@ -602,7 +644,7 @@
 
 
 <div class="viewcode-block" id="get_grid_data">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.get_grid_data">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.get_grid_data">[docs]</a>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_grid_data</span><span class="p">(</span><span class="n">document_class</span><span class="p">,</span> <span class="n">request_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> 
                        <span class="n">search_fields</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
                        <span class="n">custom_filters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -674,7 +716,7 @@
 
 
 <div class="viewcode-block" id="get_grid_data_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.get_grid_data_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.get_grid_data_sync">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_grid_data_sync</span><span class="p">(</span><span class="n">document_class</span><span class="p">,</span> <span class="n">request_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> 
                       <span class="n">search_fields</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
                       <span class="n">custom_filters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -736,7 +778,7 @@
 
 <span class="c1"># For DataTables support</span>
 <div class="viewcode-block" id="parse_datatables_params">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.parse_datatables_params">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.parse_datatables_params">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">parse_datatables_params</span><span class="p">(</span><span class="n">request_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert DataTables parameters to standard offset/limit format&quot;&quot;&quot;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request_args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
@@ -754,7 +796,7 @@
 
 
 <div class="viewcode-block" id="format_datatables_response">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.format_datatables_response">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.datagrid_api.format_datatables_response">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_datatables_response</span><span class="p">(</span><span class="n">total</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">draw</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Format response for DataTables&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">{</span>

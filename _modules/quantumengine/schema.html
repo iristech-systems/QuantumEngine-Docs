@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -506,7 +548,7 @@
 
 
 <div class="viewcode-block" id="get_document_classes">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.get_document_classes">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.get_document_classes">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_document_classes</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Document</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get all Document classes defined in a module.</span>
 
@@ -532,7 +574,7 @@
 
 
 <div class="viewcode-block" id="create_tables_from_module">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.create_tables_from_module">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.create_tables_from_module">[docs]</a>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_tables_from_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
                                    <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create tables for all Document classes in a module asynchronously.</span>
@@ -550,7 +592,7 @@
 
 
 <div class="viewcode-block" id="create_tables_from_module_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.create_tables_from_module_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.create_tables_from_module_sync">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">create_tables_from_module_sync</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                                   <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create tables for all Document classes in a module synchronously.</span>
@@ -568,7 +610,7 @@
 
 
 <div class="viewcode-block" id="generate_schema_statements">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.generate_schema_statements">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.generate_schema_statements">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_schema_statements</span><span class="p">(</span><span class="n">document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span> <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate SurrealDB schema statements for a Document class.</span>
 
@@ -627,7 +669,7 @@
 
 
 <div class="viewcode-block" id="generate_schema_statements_from_module">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.generate_schema_statements_from_module">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.generate_schema_statements_from_module">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_schema_statements_from_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate SurrealDB schema statements for all Document classes in a module.</span>
 
@@ -651,7 +693,7 @@
 
 
 <div class="viewcode-block" id="generate_drop_statements">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.generate_drop_statements">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.generate_drop_statements">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_drop_statements</span><span class="p">(</span><span class="n">document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate SurrealDB DROP statements for a Document class.</span>
 
@@ -694,7 +736,7 @@
 
 
 <div class="viewcode-block" id="generate_drop_statements_from_module">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.generate_drop_statements_from_module">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.generate_drop_statements_from_module">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_drop_statements_from_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate SurrealDB DROP statements for all Document classes in a module.</span>
 
@@ -717,7 +759,7 @@
 
 
 <div class="viewcode-block" id="generate_migration_statements">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.generate_migration_statements">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.generate_migration_statements">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_migration_statements</span><span class="p">(</span><span class="n">old_document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span> 
                                  <span class="n">new_document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span>
                                  <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
@@ -825,7 +867,7 @@
 
 
 <div class="viewcode-block" id="drop_tables_from_module">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.drop_tables_from_module">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.drop_tables_from_module">[docs]</a>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">drop_tables_from_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Drop tables for all Document classes in a module asynchronously.</span>
 
@@ -842,7 +884,7 @@
 
 
 <div class="viewcode-block" id="drop_tables_from_module_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.drop_tables_from_module_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.schema.drop_tables_from_module_sync">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">drop_tables_from_module_sync</span><span class="p">(</span><span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Drop tables for all Document classes in a module synchronously.</span>
 

@@ -1,0 +1,359 @@
+.. _backends:
+
+========
+Backends
+========
+
+QuantumEngine provides a unified interface to multiple database backends, allowing you to switch between different storage systems while maintaining consistent API semantics.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Overview
+--------
+
+QuantumEngine supports multiple database backends through a pluggable architecture:
+
+* **SurrealDB**: A multi-model database optimized for real-time applications
+* **ClickHouse**: A column-oriented database for analytics and OLAP workloads
+
+Each backend provides specific optimizations while maintaining API compatibility through the Document ORM layer.
+
+Backend Selection
+-----------------
+
+Backends can be specified at the document level or globally:
+
+Document-Level Backend
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import StringField, IntField
+
+    class User(Document):
+        __backend__ = 'surrealdb'  # Use SurrealDB
+        
+        name = StringField(required=True)
+        age = IntField()
+
+    class Analytics(Document):
+        __backend__ = 'clickhouse'  # Use ClickHouse
+        
+        event_name = StringField()
+        timestamp = DateTimeField()
+
+Global Backend Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import configure_backend
+
+    # Configure default backend
+    configure_backend('surrealdb', {
+        'url': 'ws://localhost:8000',
+        'namespace': 'my_app',
+        'database': 'production'
+    })
+
+SurrealDB Backend
+-----------------
+
+SurrealDB is a multi-model database that supports:
+
+* **Document storage** with flexible schemas
+* **Graph relationships** between documents
+* **Real-time subscriptions** for live data
+* **Advanced querying** with SurrealQL
+
+Features
+~~~~~~~~
+
+* **Schema flexibility**: Dynamic document structures
+* **Relations**: First-class support for document relationships
+* **Real-time**: Live queries and subscriptions
+* **Multi-model**: Document, graph, and key-value data models
+* **ACID transactions**: Full transactional support
+
+Configuration
+~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import configure_backend
+
+    configure_backend('surrealdb', {
+        'url': 'ws://localhost:8000',
+        'namespace': 'my_namespace',
+        'database': 'my_database',
+        'username': 'admin',
+        'password': 'secret'
+    })
+
+Data Types
+~~~~~~~~~~
+
+SurrealDB supports rich data types:
+
+* **Basic types**: String, number, boolean, datetime
+* **Complex types**: Arrays, objects, geometries
+* **Relations**: Links between documents
+* **Record IDs**: Strongly-typed identifiers
+
+Example Usage
+~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import *
+
+    class User(Document):
+        __backend__ = 'surrealdb'
+        
+        username = StringField(required=True, unique=True)
+        email = EmailField(required=True)
+        profile = DictField()
+        friends = ListField(ReferenceField('User'))
+        location = GeometryField()
+
+    class Post(Document):
+        __backend__ = 'surrealdb'
+        
+        title = StringField(required=True)
+        content = StringField()
+        author = ReferenceField(User)
+        tags = ListField(StringField())
+        created_at = DateTimeField(auto_now_add=True)
+
+    # Create relationships
+    user = User(username='john', email='john@example.com')
+    user.save()
+
+    post = Post(title='Hello World', content='My first post', author=user)
+    post.save()
+
+ClickHouse Backend
+------------------
+
+ClickHouse is optimized for analytical workloads and provides:
+
+* **Column-oriented storage** for fast analytical queries
+* **Compression** for efficient storage
+* **Materialized views** for pre-computed aggregations
+* **Distributed processing** for large datasets
+
+Features
+~~~~~~~~
+
+* **High performance**: Optimized for analytical queries
+* **Compression**: Efficient storage with various compression algorithms
+* **Scalability**: Horizontal scaling capabilities
+* **SQL compatibility**: Familiar SQL syntax with extensions
+* **Materialized views**: Pre-computed aggregations
+
+Configuration
+~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import configure_backend
+
+    configure_backend('clickhouse', {
+        'host': 'localhost',
+        'port': 9000,
+        'database': 'my_database',
+        'username': 'default',
+        'password': ''
+    })
+
+Data Types
+~~~~~~~~~~
+
+ClickHouse provides specialized data types:
+
+* **Numeric**: Int8/16/32/64, UInt8/16/32/64, Float32/64, Decimal
+* **String**: String, FixedString, LowCardinality(String)
+* **DateTime**: DateTime, DateTime64, Date
+* **Arrays**: Array(T) for any type T
+* **Nullable**: Nullable(T) for optional values
+
+Specialized Fields
+~~~~~~~~~~~~~~~~~~
+
+ClickHouse backend includes optimized field types:
+
+.. code-block:: python
+
+    from quantumengine.fields.clickhouse import *
+
+    class Event(Document):
+        __backend__ = 'clickhouse'
+        
+        event_type = LowCardinalityField(StringField())  # Optimized for repeated values
+        user_id = UUIDField()
+        timestamp = DateTimeField()
+        properties = DictField()
+        tags = ArrayField(StringField())  # Native array support
+        session_id = FixedStringField(length=36)  # Fixed-length strings
+
+Example Usage
+~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import *
+    from quantumengine.fields.clickhouse import *
+
+    class WebEvent(Document):
+        __backend__ = 'clickhouse'
+        
+        event_type = LowCardinalityField(StringField())
+        user_id = UUIDField()
+        session_id = FixedStringField(length=36)
+        timestamp = DateTimeField()
+        url = URLField()
+        properties = DictField()
+        
+        class Meta:
+            # ClickHouse-specific optimizations
+            engine = 'MergeTree'
+            order_by = ['timestamp', 'user_id']
+            partition_by = 'toYYYYMM(timestamp)'
+
+    # Bulk insert for analytics
+    events = [
+        WebEvent(
+            event_type='page_view',
+            user_id=uuid4(),
+            url='https://example.com/page1',
+            timestamp=datetime.now()
+        )
+        for _ in range(1000)
+    ]
+    
+    WebEvent.objects.bulk_create(events)
+
+Backend Comparison
+------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 35 35
+
+   * - Feature
+     - SurrealDB
+     - ClickHouse
+   * - **Use Case**
+     - Real-time applications, flexible schemas
+     - Analytics, time-series data, reporting
+   * - **Data Model**
+     - Document, Graph, Key-Value
+     - Columnar, Relational
+   * - **Relationships**
+     - Native graph relations
+     - Foreign keys, JOINs
+   * - **Real-time**
+     - Live queries, subscriptions
+     - Limited real-time capabilities
+   * - **Scalability**
+     - Horizontal scaling
+     - Excellent for read-heavy workloads
+   * - **Schema**
+     - Flexible, schemaless
+     - Fixed schema, strongly typed
+   * - **Transactions**
+     - ACID transactions
+     - Limited transaction support
+   * - **Query Language**
+     - SurrealQL
+     - SQL with extensions
+
+Multi-Backend Applications
+--------------------------
+
+You can use multiple backends in the same application:
+
+.. code-block:: python
+
+    # User data in SurrealDB for flexibility
+    class User(Document):
+        __backend__ = 'surrealdb'
+        
+        username = StringField(required=True)
+        profile = DictField()
+        friends = ListField(ReferenceField('User'))
+
+    # Analytics data in ClickHouse for performance
+    class UserActivity(Document):
+        __backend__ = 'clickhouse'
+        
+        user_id = UUIDField()
+        action = LowCardinalityField(StringField())
+        timestamp = DateTimeField()
+        properties = DictField()
+
+Connection Management
+---------------------
+
+QuantumEngine handles connection pooling and management automatically:
+
+.. code-block:: python
+
+    from quantumengine.connection import get_connection
+
+    # Get connection for specific backend
+    surrealdb_conn = get_connection('surrealdb')
+    clickhouse_conn = get_connection('clickhouse')
+
+    # Connections are automatically pooled and reused
+
+Migration and Data Transfer
+---------------------------
+
+Moving data between backends:
+
+.. code-block:: python
+
+    # Export from SurrealDB
+    users = User.objects.all()
+    
+    # Transform and import to ClickHouse
+    for user in users:
+        UserActivity.objects.create(
+            user_id=user.id,
+            action='migration',
+            timestamp=datetime.now()
+        )
+
+Performance Considerations
+--------------------------
+
+SurrealDB Best Practices
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Use indexes for frequently queried fields
+* Leverage graph relationships for complex queries
+* Use live queries for real-time features
+* Batch operations when possible
+
+ClickHouse Best Practices
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Use appropriate data types (LowCardinality for repeated values)
+* Partition large tables by date/time
+* Use materialized views for common aggregations
+* Batch inserts for better performance
+* Avoid frequent updates/deletes
+
+See Also
+--------
+
+* :doc:`/api/backends` - Complete backends API reference
+* :doc:`/fields/index` - Field types and backend-specific fields
+* :doc:`/query/index` - Query system documentation
+* :doc:`/tutorial` - Getting started with backends

@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -504,7 +546,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RelationQuerySet</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Query set specifically for graph relations.</span>
 
@@ -520,7 +562,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="RelationQuerySet.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_document</span><span class="p">:</span> <span class="n">Type</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">relation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new RelationQuerySet.</span>
 
@@ -556,7 +598,7 @@
         <span class="k">return</span> <span class="n">backend_class</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
 
 <div class="viewcode-block" id="RelationQuerySet.relate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.relate">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.relate">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">relate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a relation between two instances asynchronously.</span>
 
@@ -618,7 +660,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.relate_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.relate_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.relate_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">relate_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a relation between two instances synchronously.</span>
 
@@ -684,7 +726,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.get_related">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.get_related">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.get_related">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_related</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">target_document</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get related documents asynchronously.</span>
 
@@ -746,7 +788,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.get_related_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.get_related_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.get_related_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_related_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">target_document</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">filters</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get related documents synchronously.</span>
 
@@ -809,7 +851,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.update_relation">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.update_relation">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.update_relation">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">update_relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Update an existing relation asynchronously.</span>
 
@@ -873,7 +915,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.update_relation_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.update_relation_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.update_relation_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">update_relation_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Update an existing relation synchronously.</span>
 
@@ -937,7 +979,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.delete_relation">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.delete_relation">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.delete_relation">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete_relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete a relation asynchronously.</span>
 
@@ -995,7 +1037,7 @@
 
 
 <div class="viewcode-block" id="RelationQuerySet.delete_relation_sync">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RelationQuerySet.delete_relation_sync">[docs]</a>
+<a class="viewcode-back" href="../../../api/query.html#quantumengine.RelationQuerySet.delete_relation_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">delete_relation_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">to_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete a relation synchronously.</span>
 

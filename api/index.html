@@ -180,8 +180,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -193,6 +193,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
     Contributing
@@ -343,8 +364,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -440,6 +482,15 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="fields.html">Fields API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="backends.html">Backends API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="query.html">Query System API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions API</a></li>
 </ul>
 </div>
 </nav></div>
@@ -547,7 +598,7 @@ of the instance.</p>
 <dd class="field-even"><p>A SchemalessTable for accessing the table</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>SchemalessTable</em></p>
+<dd class="field-odd"><p><a class="reference internal" href="backends.html#quantumengine.schemaless.SchemalessTable" title="quantumengine.schemaless.SchemalessTable"><em>SchemalessTable</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -644,7 +695,7 @@ access to the database through the db property.</p>
 <dd class="field-odd"><p>The connection instance</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -711,7 +762,7 @@ a direct connection to the database.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="quantumengine.SurrealEngineAsyncConnection.db">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#quantumengine.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.SurrealEngineAsyncConnection.db" title="Link to this definition"><span>¶</span></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="backends.html#quantumengine.schemaless.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.SurrealEngineAsyncConnection.db" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Get dynamic table accessor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -810,7 +861,7 @@ access to the database through the db property.</p>
 <dd class="field-odd"><p>The connection instance</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -867,7 +918,7 @@ credentials are provided, and sets the namespace and database.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="quantumengine.SurrealEngineSyncConnection.db">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#quantumengine.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.SurrealEngineSyncConnection.db" title="Link to this definition"><span>¶</span></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="backends.html#quantumengine.schemaless.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.SurrealEngineSyncConnection.db" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Get dynamic table accessor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -913,7 +964,7 @@ it if any operation fails.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="quantumengine.SurrealEngineConnection">
 <span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">SurrealEngineConnection</span></span><a class="headerlink" href="#quantumengine.SurrealEngineConnection" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>alias of <a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurrealEngineAsyncConnection</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurrealEngineAsyncConnection</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
@@ -930,7 +981,7 @@ asynchronous connections must implement.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="quantumengine.BaseSurrealEngineConnection.db">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#quantumengine.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.BaseSurrealEngineConnection.db" title="Link to this definition"><span>¶</span></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">db</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="backends.html#quantumengine.schemaless.SurrealEngine" title="quantumengine.schemaless.SurrealEngine"><span class="pre">SurrealEngine</span></a></em><a class="headerlink" href="#quantumengine.BaseSurrealEngineConnection.db" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Get dynamic table accessor.</p>
 </dd></dl>
 
@@ -1036,7 +1087,7 @@ throughout the application.</p>
 <dd><p>The default async connection to use when none is specified (legacy)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection">quantumengine.connection.SurrealEngineAsyncConnection</a> | None</p>
+<dd class="field-odd"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection">quantumengine.connection.SurrealEngineAsyncConnection</a> | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1047,7 +1098,7 @@ throughout the application.</p>
 <dd><p>The default sync connection to use when none is specified (legacy)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection">quantumengine.connection.SurrealEngineSyncConnection</a> | None</p>
+<dd class="field-odd"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection">quantumengine.connection.SurrealEngineSyncConnection</a> | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1058,7 +1109,7 @@ throughout the application.</p>
 <dd><p>Dictionary of named async connections (legacy)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection">quantumengine.connection.SurrealEngineAsyncConnection</a>]</p>
+<dd class="field-odd"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection">quantumengine.connection.SurrealEngineAsyncConnection</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1069,7 +1120,7 @@ throughout the application.</p>
 <dd><p>Dictionary of named sync connections (legacy)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection">quantumengine.connection.SurrealEngineSyncConnection</a>]</p>
+<dd class="field-odd"><p>Dict[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a>, <a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection">quantumengine.connection.SurrealEngineSyncConnection</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1104,7 +1155,7 @@ throughout the application.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name to register the connection under</p></li>
-<li><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a>) – The async connection to register</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a>) – The async connection to register</p></li>
 </ul>
 </dd>
 </dl>
@@ -1118,7 +1169,7 @@ throughout the application.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name to register the connection under</p></li>
-<li><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a><em> | </em><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The connection to register</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a><em> | </em><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The connection to register</p></li>
 </ul>
 </dd>
 </dl>
@@ -1132,7 +1183,7 @@ throughout the application.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name to register the connection under</p></li>
-<li><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The sync connection to register</p></li>
+<li><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The sync connection to register</p></li>
 </ul>
 </dd>
 </dl>
@@ -1153,7 +1204,7 @@ throughout the application.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.13)"><strong>KeyError</strong></a> – If no async connection with the given name exists</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1176,7 +1227,7 @@ throughout the application.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.13)"><strong>KeyError</strong></a> – If no connection of the requested type with the given name exists</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a> | <a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a> | <a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1216,7 +1267,7 @@ throughout the application.</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.13)"><strong>RuntimeError</strong></a> – If no default async connection has been set</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1253,7 +1304,7 @@ throughout the application.</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.13)"><strong>RuntimeError</strong></a> – If no default sync connection has been set</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1273,7 +1324,7 @@ throughout the application.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.13)"><strong>KeyError</strong></a> – If no sync connection with the given name exists</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1344,7 +1395,7 @@ throughout the application.</p>
 <dd><p>Set the default async connection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a>) – The async connection to set as default</p>
+<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a>) – The async connection to set as default</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1355,7 +1406,7 @@ throughout the application.</p>
 <dd><p>Set the default connection based on its type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a><em> | </em><a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The connection to set as default</p>
+<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineAsyncConnection" title="quantumengine.connection.SurrealEngineAsyncConnection"><em>SurrealEngineAsyncConnection</em></a><em> | </em><a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The connection to set as default</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1366,7 +1417,7 @@ throughout the application.</p>
 <dd><p>Set the default sync connection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="#quantumengine.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The sync connection to set as default</p>
+<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="backends.html#quantumengine.connection.SurrealEngineSyncConnection" title="quantumengine.connection.SurrealEngineSyncConnection"><em>SurrealEngineSyncConnection</em></a>) – The sync connection to set as default</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1634,7 +1685,7 @@ improve query performance for frequently accessed aggregated data.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the materialized view</p></li>
-<li><p><strong>query</strong> (<a class="reference internal" href="#quantumengine.QuerySet" title="quantumengine.query.base.QuerySet"><em>QuerySet</em></a>) – The query that defines the materialized view</p></li>
+<li><p><strong>query</strong> (<a class="reference internal" href="query.html#id0" title="quantumengine.query.base.QuerySet"><em>QuerySet</em></a>) – The query that defines the materialized view</p></li>
 <li><p><strong>refresh_interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The interval at which the view is refreshed (e.g., “1h”, “30m”)</p></li>
 <li><p><strong>aggregations</strong> – Dictionary of field names and aggregation functions</p></li>
 <li><p><strong>select_fields</strong> – List of fields to select (if None, selects all fields)</p></li>
@@ -2527,7 +2578,7 @@ If the out_document is already a document instance, it returns it directly.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="quantumengine.DoesNotExist">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#DoesNotExist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.DoesNotExist" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="exceptions.html#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
 <p>Raised when a document does not exist in the database.</p>
 <p>This exception is raised when attempting to retrieve a document that
 does not exist in the database, such as when using the get() method
@@ -2537,7 +2588,7 @@ with a query that matches no documents.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="quantumengine.MultipleObjectsReturned">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#MultipleObjectsReturned"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.MultipleObjectsReturned" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="exceptions.html#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
 <p>Raised when multiple documents are returned when only one was expected.</p>
 <p>This exception is raised when a query that is expected to return a single
 document returns multiple documents, such as when using the get() method
@@ -2547,7 +2598,7 @@ with a query that matches multiple documents.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="quantumengine.ValidationError">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">ValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#ValidationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.ValidationError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="exceptions.html#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
 <p>Raised when document validation fails.</p>
 <p>This exception is raised when a document fails validation, such as when
 a required field is missing or a field value is of the wrong type.</p>
@@ -4333,7 +4384,7 @@ users = User.objects(query)</p>
 <dd class="field-even"><p>Q object with raw query</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.Q" title="quantumengine.query_expressions.Q"><em>Q</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#id23" title="quantumengine.query_expressions.Q"><em>Q</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4383,7 +4434,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd><p>Initialize a query expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>where</strong> (<a class="reference internal" href="#quantumengine.Q" title="quantumengine.query_expressions.Q"><em>Q</em></a><em> | </em><em>None</em>) – Q object for WHERE clause conditions</p>
+<dd class="field-odd"><p><strong>where</strong> (<a class="reference internal" href="query.html#id23" title="quantumengine.query_expressions.Q"><em>Q</em></a><em> | </em><em>None</em>) – Q object for WHERE clause conditions</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4414,7 +4465,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd class="field-even"><p>Self for method chaining</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#quantumengine.query_expressions.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4431,7 +4482,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd class="field-even"><p>Self for method chaining</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#quantumengine.query_expressions.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4448,7 +4499,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd class="field-even"><p>Self for method chaining</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#quantumengine.query_expressions.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4468,7 +4519,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd class="field-even"><p>Self for method chaining</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#quantumengine.query_expressions.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4485,7 +4536,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dd class="field-even"><p>Self for method chaining</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#quantumengine.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="query.html#quantumengine.query_expressions.QueryExpression" title="quantumengine.query_expressions.QueryExpression"><em>QueryExpression</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -5330,7 +5381,7 @@ when querying materialized views using the objects property.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="quantumengine.MaterializedView.objects">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#quantumengine.QuerySet" title="quantumengine.query.base.QuerySet"><span class="pre">QuerySet</span></a></em><a class="headerlink" href="#quantumengine.MaterializedView.objects" title="Link to this definition"><span>¶</span></a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="query.html#id0" title="quantumengine.query.base.QuerySet"><span class="pre">QuerySet</span></a></em><a class="headerlink" href="#quantumengine.MaterializedView.objects" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Get a QuerySet for querying the materialized view.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -5429,8 +5480,8 @@ and querying materialized views across different backends.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><em>None</em>) – Source field name from the base document</p></li>
-<li><p><strong>aggregate</strong> (<em>AggregateFunction</em><em> | </em><em>None</em>) – Aggregation function to apply</p></li>
-<li><p><strong>transform</strong> (<em>FieldTransform</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><em>Callable</em></a><em> | </em><em>None</em>) – Transformation to apply to the source field</p></li>
+<li><p><strong>aggregate</strong> (<a class="reference internal" href="backends.html#quantumengine.materialized_document.AggregateFunction" title="quantumengine.materialized_document.AggregateFunction"><em>AggregateFunction</em></a><em> | </em><em>None</em>) – Aggregation function to apply</p></li>
+<li><p><strong>transform</strong> (<a class="reference internal" href="backends.html#quantumengine.materialized_document.FieldTransform" title="quantumengine.materialized_document.FieldTransform"><em>FieldTransform</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><em>Callable</em></a><em> | </em><em>None</em>) – Transformation to apply to the source field</p></li>
 <li><p><strong>**kwargs</strong> – Additional field arguments</p></li>
 </ul>
 </dd>
@@ -5621,7 +5672,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Count">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Count" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Count aggregation function.</p>
 <p>This class represents the count() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5639,7 +5690,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Mean">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Mean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Mean" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Mean aggregation function.</p>
 <p>This class represents the math::mean() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5657,7 +5708,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Sum">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Sum" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Sum aggregation function.</p>
 <p>This class represents the math::sum() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5675,7 +5726,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Min">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Min"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Min" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Min aggregation function.</p>
 <p>This class represents the math::min() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5693,7 +5744,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Max">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Max" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Max aggregation function.</p>
 <p>This class represents the math::max() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5711,7 +5762,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.ArrayCollect">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">ArrayCollect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#ArrayCollect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.ArrayCollect" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Array collect aggregation function.</p>
 <p>This class represents the array::collect() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5729,7 +5780,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Median">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Median"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Median" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Median aggregation function.</p>
 <p>This class represents the math::median() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5747,7 +5798,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.StdDev">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">StdDev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#StdDev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.StdDev" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Standard deviation aggregation function.</p>
 <p>This class represents the math::stddev() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5765,7 +5816,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Variance">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Variance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Variance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Variance" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Variance aggregation function.</p>
 <p>This class represents the math::variance() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5783,7 +5834,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Percentile">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Percentile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Percentile" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Percentile aggregation function.</p>
 <p>This class represents the math::percentile() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5815,7 +5866,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Distinct">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Distinct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#Distinct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Distinct" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Distinct aggregation function.</p>
 <p>This class represents the array::distinct() aggregation function in SurrealQL.</p>
 <dl class="field-list simple">
@@ -5833,7 +5884,7 @@ of the aggregation function.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.GroupConcat">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">GroupConcat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">',</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_view.html#GroupConcat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.GroupConcat" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="backends.html#quantumengine.materialized_view.Aggregation" title="quantumengine.materialized_view.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
 <p>Group concatenation aggregation function.</p>
 <p>This class represents a custom aggregation function that concatenates values
 with a separator.</p>
@@ -7129,7 +7180,7 @@ improve query performance for frequently accessed aggregated data.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the materialized view</p></li>
-<li><p><strong>query</strong> (<a class="reference internal" href="#quantumengine.QuerySet" title="quantumengine.query.base.QuerySet"><em>QuerySet</em></a>) – The query that defines the materialized view</p></li>
+<li><p><strong>query</strong> (<a class="reference internal" href="query.html#id0" title="quantumengine.query.base.QuerySet"><em>QuerySet</em></a>) – The query that defines the materialized view</p></li>
 <li><p><strong>refresh_interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The interval at which the view is refreshed (e.g., “1h”, “30m”)</p></li>
 <li><p><strong>aggregations</strong> – Dictionary of field names and aggregation functions</p></li>
 <li><p><strong>select_fields</strong> – List of fields to select (if None, selects all fields)</p></li>
@@ -7228,111 +7279,77 @@ improve query performance for frequently accessed aggregated data.</p>
 <section id="backends">
 <h2>Backends<a class="headerlink" href="#backends" title="Link to this heading"><span>¶</span></a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backends.html">Backends API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#module-quantumengine.connection">Connection Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#backend-configuration">Backend Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#backend-implementations">Backend Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#backend-interface">Backend Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#schema-management">Schema Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#data-grid-api">Data Grid API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#materialized-views">Materialized Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#backend-utilities">Backend Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#backend-specific-features">Backend-Specific Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#migration-support">Migration Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#performance-monitoring">Performance Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#exception-handling">Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backends.html#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 <section id="query-system">
 <h2>Query System<a class="headerlink" href="#query-system" title="Link to this heading"><span>¶</span></a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="query.html">Query System API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#module-quantumengine.query.base">Base Query Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#query-operations">Query Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#module-quantumengine.query_expressions">Query Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#module-quantumengine.aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#module-quantumengine.query.relation">Relationship Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#backend-specific-query-features">Backend-Specific Query Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#raw-queries">Raw Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#query-compilation">Query Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#query-optimization">Query Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#transaction-support">Transaction Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#search-operations">Search Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#bulk-operations">Bulk Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#query-utilities">Query Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
-<section id="module-quantumengine.exceptions">
-<span id="exceptions"></span><h2>Exceptions<a class="headerlink" href="#module-quantumengine.exceptions" title="Link to this heading"><span>¶</span></a></h2>
-<p>Exceptions for QuantumEngine.</p>
-<p>This module contains custom exceptions used throughout the QuantumEngine package.</p>
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.QuantumEngineError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">QuantumEngineError</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#QuantumEngineError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.QuantumEngineError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
-<p>Base exception class for QuantumEngine.</p>
-<p>All other exceptions in the package inherit from this class.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.ConnectionError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">ConnectionError</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#ConnectionError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.ConnectionError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when a connection to the database cannot be established.</p>
-<p>This exception is raised when there is an issue connecting to the SurrealDB server,
-such as network errors, authentication failures, or server unavailability.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.ValidationError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">ValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#ValidationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.ValidationError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when document validation fails.</p>
-<p>This exception is raised when a document fails validation, such as when
-a required field is missing or a field value is of the wrong type.</p>
-<dl class="field-list simple">
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantumengine.exceptions.ValidationError.errors">
-<span class="sig-name descname"><span class="pre">errors</span></span><a class="headerlink" href="#quantumengine.exceptions.ValidationError.errors" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Dictionary of validation errors by field</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantumengine.exceptions.ValidationError.field_name">
-<span class="sig-name descname"><span class="pre">field_name</span></span><a class="headerlink" href="#quantumengine.exceptions.ValidationError.field_name" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Name of the field that failed validation, if applicable</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="quantumengine.exceptions.ValidationError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#ValidationError.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.ValidationError.__init__" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Initialize a ValidationError.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The error message</p></li>
-<li><p><strong>errors</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a><em>] </em><em>| </em><em>None</em>) – Dictionary of validation errors by field</p></li>
-<li><p><strong>field_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><em>None</em>) – Name of the field that failed validation, if applicable</p></li>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading"><span>¶</span></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#module-quantumengine.exceptions">Core Exceptions Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#base-exception-classes">Base Exception Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#validation-exceptions">Validation Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#database-exceptions">Database Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#backend-specific-exceptions">Backend-Specific Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#document-exceptions">Document Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#configuration-exceptions">Configuration Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#field-specific-exceptions">Field-Specific Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#query-specific-exceptions">Query-Specific Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#schema-exceptions">Schema Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#security-exceptions">Security Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#performance-exceptions">Performance Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#serialization-exceptions">Serialization Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-utilities">Exception Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#custom-exception-base-classes">Custom Exception Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-context-management">Exception Context Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-reporting">Exception Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#see-also">See Also</a></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.DoesNotExist">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#DoesNotExist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.DoesNotExist" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when a document does not exist in the database.</p>
-<p>This exception is raised when attempting to retrieve a document that
-does not exist in the database, such as when using the get() method
-with a query that matches no documents.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.MultipleObjectsReturned">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#MultipleObjectsReturned"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.MultipleObjectsReturned" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when multiple documents are returned when only one was expected.</p>
-<p>This exception is raised when a query that is expected to return a single
-document returns multiple documents, such as when using the get() method
-with a query that matches multiple documents.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.OperationError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">OperationError</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#OperationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.OperationError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when a database operation fails.</p>
-<p>This exception is raised when a database operation fails, such as when
-attempting to create a document with an invalid schema or when a query
-fails due to a syntax error.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="quantumengine.exceptions.InvalidQueryError">
-<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidQueryError</span></span><a class="reference internal" href="../_modules/quantumengine/exceptions.html#InvalidQueryError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.exceptions.InvalidQueryError" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.exceptions.QuantumEngineError" title="quantumengine.exceptions.QuantumEngineError"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></p>
-<p>Raised when a query is invalid.</p>
-<p>This exception is raised when a query is invalid, such as when using
-an unsupported operator or when a query is malformed.</p>
-</dd></dl>
-
+</li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -7927,21 +7944,7 @@ an unsupported operator or when a query is malformed.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields">Fields</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backends">Backends</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-system">Query System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-quantumengine.exceptions">Exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.QuantumEngineError"><code class="docutils literal notranslate"><span class="pre">QuantumEngineError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.ConnectionError"><code class="docutils literal notranslate"><span class="pre">ConnectionError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.ValidationError"><code class="docutils literal notranslate"><span class="pre">ValidationError</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.ValidationError.errors"><code class="docutils literal notranslate"><span class="pre">ValidationError.errors</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.ValidationError.field_name"><code class="docutils literal notranslate"><span class="pre">ValidationError.field_name</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.ValidationError.__init__"><code class="docutils literal notranslate"><span class="pre">ValidationError.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">DoesNotExist</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.OperationError"><code class="docutils literal notranslate"><span class="pre">OperationError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantumengine.exceptions.InvalidQueryError"><code class="docutils literal notranslate"><span class="pre">InvalidQueryError</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
 </ul>
   </nav></div>
 

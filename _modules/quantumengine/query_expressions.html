@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -510,7 +552,7 @@
 
 
 <div class="viewcode-block" id="Q">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Q</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Query expression builder for complex queries.</span>
 <span class="sd">    </span>
@@ -528,7 +570,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <div class="viewcode-block" id="Q.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a query expression.</span>
 <span class="sd">        </span>
@@ -545,7 +587,7 @@
 
     
 <div class="viewcode-block" id="Q.__and__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.__and__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.__and__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Combine with another Q object using AND.&quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">Q</span><span class="p">()</span>
@@ -555,7 +597,7 @@
 
     
 <div class="viewcode-block" id="Q.__or__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.__or__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.__or__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Combine with another Q object using OR.&quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">Q</span><span class="p">()</span>
@@ -565,7 +607,7 @@
 
     
 <div class="viewcode-block" id="Q.__invert__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.__invert__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.__invert__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Negate this query using NOT.&quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">Q</span><span class="p">()</span>
@@ -575,7 +617,7 @@
 
     
 <div class="viewcode-block" id="Q.raw">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.raw">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.raw">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">query_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a raw query expression.</span>
@@ -592,7 +634,7 @@
 
     
 <div class="viewcode-block" id="Q.to_conditions">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.to_conditions">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.to_conditions">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_conditions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">tuple</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert this Q object to a list of conditions.</span>
 <span class="sd">        </span>
@@ -652,7 +694,7 @@
 
     
 <div class="viewcode-block" id="Q.to_where_clause">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Q.to_where_clause">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.Q.to_where_clause">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_where_clause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert this Q object to a WHERE clause string.</span>
 <span class="sd">        </span>
@@ -708,7 +750,7 @@
 
 
 <div class="viewcode-block" id="QueryExpression">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">QueryExpression</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Higher-level query expression that can include fetch, grouping, etc.</span>
 <span class="sd">    </span>
@@ -717,7 +759,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <div class="viewcode-block" id="QueryExpression.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Q</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a query expression.</span>
 <span class="sd">        </span>
@@ -734,7 +776,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.fetch">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.fetch">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.fetch">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;QueryExpression&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add FETCH clause to resolve references.</span>
 <span class="sd">        </span>
@@ -749,7 +791,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.group_by">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.group_by">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.group_by">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">group_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;QueryExpression&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add GROUP BY clause.</span>
 <span class="sd">        </span>
@@ -764,7 +806,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.order_by">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.order_by">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.order_by">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">order_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;ASC&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;QueryExpression&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add ORDER BY clause.</span>
 <span class="sd">        </span>
@@ -781,7 +823,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.limit">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.limit">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.limit">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;QueryExpression&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add LIMIT clause.</span>
 <span class="sd">        </span>
@@ -796,7 +838,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.start">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.start">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.start">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;QueryExpression&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add START clause for pagination.</span>
 <span class="sd">        </span>
@@ -811,7 +853,7 @@
 
     
 <div class="viewcode-block" id="QueryExpression.apply_to_queryset">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.QueryExpression.apply_to_queryset">[docs]</a>
+<a class="viewcode-back" href="../../api/query.html#quantumengine.QueryExpression.apply_to_queryset">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">apply_to_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queryset</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply this expression to a queryset.</span>
 <span class="sd">        </span>

@@ -1,0 +1,482 @@
+.. _query-system:
+
+============
+Query System
+============
+
+QuantumEngine provides a powerful and flexible query system that abstracts database operations across different backends while maintaining performance and expressiveness.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Overview
+--------
+
+The query system in QuantumEngine provides:
+
+* **Unified API** across different database backends
+* **Expressive query language** with method chaining
+* **Backend-specific optimizations** for performance
+* **Type-safe queries** with field validation
+* **Relationship traversal** for complex data access
+* **Aggregation support** for analytical operations
+
+Basic Queries
+-------------
+
+Document Manager
+~~~~~~~~~~~~~~~~
+
+Each document class provides a manager for database operations:
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import StringField, IntField, DateTimeField
+
+    class User(Document):
+        name = StringField(required=True)
+        age = IntField()
+        created_at = DateTimeField(auto_now_add=True)
+
+    # All users
+    users = User.objects.all()
+
+    # Filter users
+    young_users = User.objects.filter(age__lt=25)
+
+    # Get single user
+    user = User.objects.get(name='John')
+
+    # Create user
+    new_user = User.objects.create(name='Jane', age=30)
+
+Filtering
+---------
+
+Field Lookups
+~~~~~~~~~~~~~
+
+QuantumEngine supports Django-style field lookups:
+
+.. code-block:: python
+
+    # Exact match
+    User.objects.filter(name='John')
+
+    # Comparison operators
+    User.objects.filter(age__gt=18)      # Greater than
+    User.objects.filter(age__gte=18)     # Greater than or equal
+    User.objects.filter(age__lt=65)      # Less than
+    User.objects.filter(age__lte=65)     # Less than or equal
+    User.objects.filter(age__ne=25)      # Not equal
+
+    # String operations
+    User.objects.filter(name__contains='John')     # Contains substring
+    User.objects.filter(name__startswith='J')      # Starts with
+    User.objects.filter(name__endswith='son')      # Ends with
+    User.objects.filter(name__icontains='JOHN')    # Case-insensitive contains
+
+    # List operations
+    User.objects.filter(age__in=[25, 30, 35])      # In list
+    User.objects.filter(age__not_in=[25, 30])      # Not in list
+
+    # Null checks
+    User.objects.filter(email__isnull=True)        # Is null
+    User.objects.filter(email__isnull=False)       # Is not null
+
+Complex Queries
+~~~~~~~~~~~~~~~
+
+Combine multiple conditions:
+
+.. code-block:: python
+
+    from quantumengine.query import Q
+
+    # AND conditions (default)
+    users = User.objects.filter(age__gte=18, age__lt=65)
+
+    # OR conditions
+    users = User.objects.filter(Q(age__lt=18) | Q(age__gte=65))
+
+    # NOT conditions
+    users = User.objects.filter(~Q(name='John'))
+
+    # Complex combinations
+    users = User.objects.filter(
+        Q(age__gte=18) & Q(age__lt=65) & 
+        (Q(name__startswith='J') | Q(email__contains='@company.com'))
+    )
+
+Ordering
+--------
+
+Sort query results:
+
+.. code-block:: python
+
+    # Single field ordering
+    User.objects.order_by('name')          # Ascending
+    User.objects.order_by('-age')          # Descending
+
+    # Multiple field ordering
+    User.objects.order_by('age', '-created_at')
+
+    # Random ordering
+    User.objects.order_by('?')
+
+Limiting Results
+----------------
+
+Control the number of results:
+
+.. code-block:: python
+
+    # First 10 users
+    User.objects.all()[:10]
+
+    # Skip first 10, take next 10
+    User.objects.all()[10:20]
+
+    # First user
+    User.objects.first()
+
+    # Last user
+    User.objects.last()
+
+    # Limit without slicing
+    User.objects.limit(10)
+
+    # Offset
+    User.objects.offset(10)
+
+Aggregation
+-----------
+
+Perform calculations on query results:
+
+.. code-block:: python
+
+    from quantumengine.aggregation import Count, Sum, Avg, Max, Min
+
+    # Count users
+    user_count = User.objects.count()
+
+    # Aggregate functions
+    stats = User.objects.aggregate(
+        total_users=Count('id'),
+        avg_age=Avg('age'),
+        max_age=Max('age'),
+        min_age=Min('age')
+    )
+
+    # Group by with aggregation
+    age_distribution = User.objects.values('age').annotate(
+        count=Count('id')
+    ).order_by('age')
+
+Relationship Queries
+--------------------
+
+Navigate relationships between documents:
+
+.. code-block:: python
+
+    class Post(Document):
+        title = StringField(required=True)
+        content = StringField()
+        author = ReferenceField(User)
+        tags = ListField(StringField())
+
+    class Comment(Document):
+        content = StringField(required=True)
+        post = ReferenceField(Post)
+        author = ReferenceField(User)
+
+    # Follow relationships
+    posts = Post.objects.filter(author__name='John')
+    comments = Comment.objects.filter(post__author__age__gt=18)
+
+    # Reverse relationships
+    user = User.objects.get(name='John')
+    user_posts = user.posts.all()  # Reverse reference
+
+    # Prefetch related objects
+    posts = Post.objects.select_related('author').all()
+    
+    # Prefetch many-to-many relationships
+    posts = Post.objects.prefetch_related('comments').all()
+
+Advanced Queries
+----------------
+
+Raw Queries
+~~~~~~~~~~~
+
+Execute backend-specific queries when needed:
+
+.. code-block:: python
+
+    # SurrealDB raw query
+    results = User.objects.raw(
+        "SELECT * FROM user WHERE age > $age",
+        age=25
+    )
+
+    # ClickHouse raw query
+    results = Analytics.objects.raw(
+        "SELECT event_type, COUNT(*) as count FROM analytics "
+        "WHERE timestamp > %(start_date)s GROUP BY event_type",
+        start_date=datetime.now() - timedelta(days=7)
+    )
+
+Subqueries
+~~~~~~~~~~
+
+Use subqueries for complex filtering:
+
+.. code-block:: python
+
+    # Users who have written posts
+    active_users = User.objects.filter(
+        id__in=Post.objects.values('author_id')
+    )
+
+    # Users with more than 5 posts
+    prolific_users = User.objects.filter(
+        id__in=Post.objects.values('author_id').annotate(
+            post_count=Count('id')
+        ).filter(post_count__gt=5)
+    )
+
+Full-Text Search
+~~~~~~~~~~~~~~~~
+
+Search across text fields:
+
+.. code-block:: python
+
+    # Basic text search
+    posts = Post.objects.search('django tutorial')
+
+    # Search specific fields
+    posts = Post.objects.search('python', fields=['title', 'content'])
+
+    # Search with ranking
+    posts = Post.objects.search('machine learning').order_by('-search_rank')
+
+Backend-Specific Features
+--------------------------
+
+SurrealDB Features
+~~~~~~~~~~~~~~~~~~
+
+Take advantage of SurrealDB's graph capabilities:
+
+.. code-block:: python
+
+    # Graph traversal
+    user = User.objects.get(name='John')
+    
+    # Find friends of friends
+    friends_of_friends = user.friends.select_related('friends').all()
+
+    # Live queries (real-time updates)
+    live_posts = Post.objects.filter(published=True).live()
+    
+    # Subscribe to changes
+    def on_post_update(post):
+        print(f"Post updated: {post.title}")
+    
+    live_posts.subscribe(on_post_update)
+
+ClickHouse Features
+~~~~~~~~~~~~~~~~~~~
+
+Optimize for analytical workloads:
+
+.. code-block:: python
+
+    # Time-series queries
+    daily_events = Event.objects.filter(
+        timestamp__gte=datetime.now() - timedelta(days=30)
+    ).extra(
+        select={'day': 'toDate(timestamp)'}
+    ).values('day').annotate(
+        count=Count('id')
+    ).order_by('day')
+
+    # Window functions
+    running_totals = Event.objects.extra(
+        select={
+            'running_total': 'sum(count(*)) OVER (ORDER BY timestamp)'
+        }
+    ).values('timestamp', 'running_total')
+
+    # Array operations
+    events_with_tags = Event.objects.filter(
+        tags__contains=['python', 'django']
+    )
+
+Query Optimization
+------------------
+
+Performance Tips
+~~~~~~~~~~~~~~~~
+
+1. **Use indexes** on frequently queried fields
+2. **Select only needed fields** with `values()` or `only()`
+3. **Prefetch relationships** to avoid N+1 queries
+4. **Use bulk operations** for multiple inserts/updates
+5. **Optimize filtering** by putting most selective filters first
+
+.. code-block:: python
+
+    # Efficient: select only needed fields
+    users = User.objects.values('name', 'email').all()
+
+    # Efficient: prefetch relationships
+    posts = Post.objects.select_related('author').prefetch_related('comments')
+
+    # Efficient: bulk operations
+    User.objects.bulk_create([
+        User(name=f'User {i}', age=20+i) for i in range(1000)
+    ])
+
+Query Debugging
+~~~~~~~~~~~~~~~
+
+Debug and analyze query performance:
+
+.. code-block:: python
+
+    # Enable query logging
+    import logging
+    logging.getLogger('quantumengine.query').setLevel(logging.DEBUG)
+
+    # Explain query execution
+    queryset = User.objects.filter(age__gt=25)
+    print(queryset.explain())
+
+    # Query statistics
+    print(f"Query count: {queryset.count()}")
+    print(f"Estimated time: {queryset.estimate_time()}")
+
+Custom Query Methods
+--------------------
+
+Extend query functionality:
+
+.. code-block:: python
+
+    class UserQuerySet:
+        def adults(self):
+            return self.filter(age__gte=18)
+        
+        def active(self):
+            return self.filter(last_login__gte=timezone.now() - timedelta(days=30))
+        
+        def by_email_domain(self, domain):
+            return self.filter(email__endswith=f'@{domain}')
+
+    class UserManager:
+        def get_queryset(self):
+            return UserQuerySet(self.model)
+        
+        def adults(self):
+            return self.get_queryset().adults()
+
+    class User(Document):
+        name = StringField(required=True)
+        age = IntField()
+        email = EmailField()
+        
+        objects = UserManager()
+
+    # Usage
+    adult_users = User.objects.adults()
+    active_adults = User.objects.adults().active()
+
+Query Expressions
+-----------------
+
+Use expressions for complex calculations:
+
+.. code-block:: python
+
+    from quantumengine.query_expressions import F, Case, When, Value
+
+    # Field references
+    User.objects.filter(age__gt=F('registration_age'))
+
+    # Arithmetic operations
+    User.objects.annotate(
+        age_next_year=F('age') + 1,
+        age_difference=F('age') - F('registration_age')
+    )
+
+    # Conditional expressions
+    User.objects.annotate(
+        status=Case(
+            When(age__lt=18, then=Value('minor')),
+            When(age__gte=65, then=Value('senior')),
+            default=Value('adult')
+        )
+    )
+
+Transactions
+------------
+
+Ensure data consistency:
+
+.. code-block:: python
+
+    from quantumengine import transaction
+
+    # Atomic transactions
+    with transaction.atomic():
+        user = User.objects.create(name='John', age=30)
+        Post.objects.create(title='First Post', author=user)
+        # All operations succeed or fail together
+
+    # Manual transaction control
+    transaction.begin()
+    try:
+        # Perform operations
+        user.save()
+        post.save()
+        transaction.commit()
+    except Exception:
+        transaction.rollback()
+        raise
+
+Error Handling
+--------------
+
+Handle query-related errors:
+
+.. code-block:: python
+
+    from quantumengine.exceptions import DoesNotExist, MultipleObjectsReturned
+
+    try:
+        user = User.objects.get(name='John')
+    except DoesNotExist:
+        print("User not found")
+    except MultipleObjectsReturned:
+        print("Multiple users found")
+
+    # Graceful handling
+    user = User.objects.filter(name='John').first()
+    if user:
+        print(f"Found user: {user.name}")
+
+See Also
+--------
+
+* :doc:`/api/query` - Complete query system API reference
+* :doc:`/backends/index` - Backend-specific query features
+* :doc:`/fields/index` - Field types and query compatibility
+* :doc:`/exceptions/index` - Exception handling guide

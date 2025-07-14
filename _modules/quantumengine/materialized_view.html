@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../fields/index.html">
-    Fields
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
   </a>
 </li>
 
@@ -190,6 +190,27 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../exceptions/index.html">
+    Exceptions
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../contributing.html">
     Contributing
@@ -342,8 +363,29 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../backends/index.html">
+    Backends
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../fields/index.html">
     Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../query/index.html">
+    Query System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../exceptions/index.html">
+    Exceptions
   </a>
 </li>
 
@@ -514,7 +556,7 @@
 
 
 <div class="viewcode-block" id="Aggregation">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Aggregation">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Aggregation">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Aggregation</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for aggregation functions.</span>
 
@@ -524,7 +566,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Aggregation.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Aggregation.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Aggregation.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new Aggregation.</span>
 
@@ -535,7 +577,7 @@
 
 
 <div class="viewcode-block" id="Aggregation.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Aggregation.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Aggregation.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the aggregation function.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses must implement __str__&quot;</span><span class="p">)</span></div>
@@ -544,7 +586,7 @@
 
 
 <div class="viewcode-block" id="Count">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Count">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Count">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Count</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Count aggregation function.</span>
 
@@ -552,7 +594,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Count.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Count.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Count.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the count function.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;count()&quot;</span></div>
@@ -561,7 +603,7 @@
 
 
 <div class="viewcode-block" id="Mean">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Mean">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Mean">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Mean</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Mean aggregation function.</span>
 
@@ -569,7 +611,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Mean.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Mean.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Mean.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the mean function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -580,7 +622,7 @@
 
 
 <div class="viewcode-block" id="Sum">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Sum">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Sum">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Sum</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sum aggregation function.</span>
 
@@ -588,7 +630,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Sum.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Sum.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Sum.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the sum function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -599,7 +641,7 @@
 
 
 <div class="viewcode-block" id="Min">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Min">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Min">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Min</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Min aggregation function.</span>
 
@@ -607,7 +649,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Min.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Min.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Min.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the min function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -618,7 +660,7 @@
 
 
 <div class="viewcode-block" id="Max">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Max">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Max">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Max</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Max aggregation function.</span>
 
@@ -626,7 +668,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Max.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Max.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Max.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the max function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -637,7 +679,7 @@
 
 
 <div class="viewcode-block" id="ArrayCollect">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.ArrayCollect">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.ArrayCollect">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ArrayCollect</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Array collect aggregation function.</span>
 
@@ -645,7 +687,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="ArrayCollect.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.ArrayCollect.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.ArrayCollect.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the array collect function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -656,7 +698,7 @@
 
 
 <div class="viewcode-block" id="Median">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Median">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Median">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Median</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Median aggregation function.</span>
 
@@ -664,7 +706,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Median.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Median.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Median.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the median function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -675,7 +717,7 @@
 
 
 <div class="viewcode-block" id="StdDev">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.StdDev">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.StdDev">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">StdDev</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Standard deviation aggregation function.</span>
 
@@ -683,7 +725,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="StdDev.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.StdDev.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.StdDev.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the standard deviation function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -694,7 +736,7 @@
 
 
 <div class="viewcode-block" id="Variance">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Variance">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Variance">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Variance</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Variance aggregation function.</span>
 
@@ -702,7 +744,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Variance.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Variance.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Variance.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the variance function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -713,7 +755,7 @@
 
 
 <div class="viewcode-block" id="Percentile">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Percentile">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Percentile">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Percentile</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Percentile aggregation function.</span>
 
@@ -721,7 +763,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Percentile.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Percentile.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Percentile.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">percentile</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new Percentile.</span>
 
@@ -734,7 +776,7 @@
 
 
 <div class="viewcode-block" id="Percentile.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Percentile.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Percentile.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the percentile function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -745,7 +787,7 @@
 
 
 <div class="viewcode-block" id="Distinct">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Distinct">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Distinct">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Distinct</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Distinct aggregation function.</span>
 
@@ -753,7 +795,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Distinct.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.Distinct.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.Distinct.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the distinct function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -764,7 +806,7 @@
 
 
 <div class="viewcode-block" id="GroupConcat">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.GroupConcat">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.GroupConcat">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">GroupConcat</span><span class="p">(</span><span class="n">Aggregation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Group concatenation aggregation function.</span>
 
@@ -773,7 +815,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="GroupConcat.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.GroupConcat.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.GroupConcat.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new GroupConcat.</span>
 
@@ -786,7 +828,7 @@
 
 
 <div class="viewcode-block" id="GroupConcat.__str__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.GroupConcat.__str__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.GroupConcat.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the SurrealQL representation of the group concat function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="p">:</span>
@@ -797,7 +839,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MaterializedView</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Materialized view for SurrealDB.</span>
 
@@ -815,7 +857,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="MaterializedView.__init__">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.__init__">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="n">QuerySet</span><span class="p">,</span> <span class="n">refresh_interval</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">document_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="s2">&quot;Document&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">aggregations</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Aggregation</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">select_fields</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -918,7 +960,7 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">new_select_part</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">rest_part</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <div class="viewcode-block" id="MaterializedView.create">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.create">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.create">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the materialized view in the database.</span>
 
@@ -939,7 +981,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.create_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.create_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.create_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">create_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the materialized view in the database synchronously.</span>
 
@@ -957,7 +999,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.drop">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.drop">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.drop">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Drop the materialized view from the database.</span>
 
@@ -975,7 +1017,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.drop_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.drop_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.drop_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">drop_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Drop the materialized view from the database synchronously.</span>
 
@@ -993,7 +1035,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.refresh">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.refresh">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.refresh">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Manually refresh the materialized view.</span>
 
@@ -1013,7 +1055,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.refresh_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.refresh_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.refresh_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">refresh_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Manually refresh the materialized view.</span>
 
@@ -1049,7 +1091,7 @@
         <span class="k">return</span> <span class="n">QuerySet</span><span class="p">(</span><span class="n">view_class</span><span class="p">,</span> <span class="n">connection</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MaterializedView.execute_raw_query">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.execute_raw_query">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.execute_raw_query">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute_raw_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a raw query against the materialized view.</span>
 
@@ -1068,7 +1110,7 @@
 
 
 <div class="viewcode-block" id="MaterializedView.execute_raw_query_sync">
-<a class="viewcode-back" href="../../api/index.html#quantumengine.MaterializedView.execute_raw_query_sync">[docs]</a>
+<a class="viewcode-back" href="../../api/index.html#quantumengine.materialized_view.MaterializedView.execute_raw_query_sync">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">execute_raw_query_sync</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a raw query against the materialized view synchronously.</span>
 

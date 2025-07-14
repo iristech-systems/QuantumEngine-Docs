@@ -106,8 +106,8 @@ Table of Contents
    api/index
    backends/index
    fields/index
-   queries/index
-   examples/index
+   query/index
+   exceptions/index
    contributing
    changelog
 
