@@ -1,0 +1,203 @@
+.. _api-fields:
+
+==============
+Fields API
+==============
+
+This section provides the complete API reference for all field types in QuantumEngine.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Base Field
+----------
+
+.. automodule:: quantumengine.fields.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Scalar Fields
+-------------
+
+.. automodule:: quantumengine.fields.scalar
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DateTime Fields
+---------------
+
+.. automodule:: quantumengine.fields.datetime
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Collection Fields
+-----------------
+
+.. automodule:: quantumengine.fields.collection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Reference Fields
+----------------
+
+.. automodule:: quantumengine.fields.reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Geometry Fields
+---------------
+
+.. automodule:: quantumengine.fields.geometry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ID Fields
+---------
+
+.. automodule:: quantumengine.fields.id
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Specialized Fields
+------------------
+
+BytesField
+~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.BytesField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+RegexField
+~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.RegexField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+DecimalField
+~~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.DecimalField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+UUIDField
+~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.UUIDField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+LiteralField
+~~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.LiteralField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+EmailField
+~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.EmailField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+URLField
+~~~~~~~~
+
+.. autoclass:: quantumengine.fields.URLField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+IPAddressField
+~~~~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.IPAddressField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+SlugField
+~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.SlugField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ChoiceField
+~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.ChoiceField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Additional Fields
+-----------------
+
+OptionField
+~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.OptionField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+FutureField
+~~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.FutureField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TableField
+~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.TableField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+RangeField
+~~~~~~~~~~
+
+.. autoclass:: quantumengine.fields.RangeField
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ClickHouse-Specific Fields
+--------------------------
+
+.. automodule:: quantumengine.fields.clickhouse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Complete Fields Module
+----------------------
+
+For convenience, here's the complete fields module with all exports:
+
+.. automodule:: quantumengine.fields
+   :members:
+   :imported-members:
+   :undoc-members:

@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contributing" href="../contributing.html" />
+    <link rel="next" title="Fields API" href="fields.html" />
     <link rel="prev" title="Tutorial" href="../tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,8 +180,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../contributing.html">
-    Contributing
+  <a class="nav-link nav-internal" href="../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -193,6 +193,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
     Changelog
@@ -336,6 +343,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../fields/index.html">
+    Fields
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../contributing.html">
     Contributing
   </a>
@@ -424,7 +438,10 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Fields API</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -2567,7 +2584,7 @@ a required field is missing or a field value is of the wrong type.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.Field">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">define_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyzer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/base.html#Field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Field" title="Link to this definition"><span>¶</span></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">define_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyzer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/base.html#Field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Field" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
 <p>Base class for all field types.</p>
 <p>This class provides the foundation for all field types in the document model.
@@ -2613,7 +2630,7 @@ representations.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="quantumengine.Field.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">define_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyzer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/base.html#Field.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Field.__init__" title="Link to this definition"><span>¶</span></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">define_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyzer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/base.html#Field.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.Field.__init__" title="Link to this definition"><span>¶</span></a></dt>
 <dd><p>Initialize a new Field.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2628,6 +2645,7 @@ representations.</p>
 <li><p><strong>analyzer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><em>None</em>) – Analyzer to use for search indexes</p></li>
 <li><p><strong>index_with</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>] </em><em>| </em><em>None</em>) – List of other field names to include in the index</p></li>
 <li><p><strong>materialized</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><em>None</em>) – ClickHouse materialized column expression</p></li>
+<li><p><strong>help_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><em>None</em>) – Human-readable description of what this field represents</p></li>
 <li><p><strong>indexes</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><em>None</em>) – List of index specifications for advanced indexing</p></li>
 </ul>
 </dd>
@@ -2706,7 +2724,7 @@ Subclasses should override this method to provide type-specific validation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.StringField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">StringField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/scalar.html#StringField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.StringField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
 <p>String field type.</p>
 <p>This field type stores string values and provides validation for
 minimum length, maximum length, and regex pattern matching.</p>
@@ -2776,7 +2794,7 @@ constraints for minimum length, maximum length, and regex pattern.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.NumberField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">NumberField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/scalar.html#NumberField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.NumberField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
 <p>Base class for numeric fields.</p>
 <p>This field type is the base class for all numeric field types.
 It provides validation for minimum and maximum values.</p>
@@ -2839,7 +2857,7 @@ constraints for minimum and maximum values.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.IntField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">IntField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/scalar.html#IntField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.IntField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.NumberField" title="quantumengine.fields.scalar.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.NumberField" title="quantumengine.fields.scalar.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberField</span></code></a></p>
 <p>Integer field type.</p>
 <p>This field type stores integer values and provides validation
 to ensure the value is an integer.</p>
@@ -2900,7 +2918,7 @@ to ensure the value is an integer.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.FloatField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">FloatField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/scalar.html#FloatField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.FloatField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.NumberField" title="quantumengine.fields.scalar.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.NumberField" title="quantumengine.fields.scalar.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberField</span></code></a></p>
 <p>Float field type.</p>
 <p>This field type stores floating-point values and provides validation
 to ensure the value can be converted to a float.</p>
@@ -2943,7 +2961,7 @@ to ensure the value can be converted to a float.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.BooleanField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">BooleanField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/scalar.html#BooleanField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.BooleanField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>]</p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>]</p>
 <p>Boolean field type.</p>
 <p>This field type stores boolean values and provides validation
 to ensure the value is a boolean.</p>
@@ -2986,7 +3004,7 @@ to ensure the value is a boolean.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.DateTimeField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">DateTimeField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/datetime.html#DateTimeField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.DateTimeField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>]</p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>]</p>
 <p>DateTime field type.</p>
 <p>This field type stores datetime values and provides validation and
 conversion between Python datetime objects and SurrealDB datetime format.</p>
@@ -3043,7 +3061,7 @@ converted to a datetime from an ISO format string.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.ListField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">ListField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/collection.html#ListField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.ListField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>List field type.</p>
 <p>This field type stores lists of values and provides validation and
 conversion for the items in the list. The items can be of a specific
@@ -3063,7 +3081,7 @@ field type, which is used to validate and convert each item.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>field_type</strong> (<a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><em>Field</em></a><em> | </em><em>None</em>) – The field type for items in the list</p></li>
+<li><p><strong>field_type</strong> (<a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><em>Field</em></a><em> | </em><em>None</em>) – The field type for items in the list</p></li>
 <li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>) – Additional arguments to pass to the parent class</p></li>
 </ul>
 </dd>
@@ -3142,7 +3160,7 @@ item in the list using the field_type if provided.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.DictField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">DictField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/collection.html#DictField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.DictField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Dict field type.</p>
 <p>This field type stores dictionaries of values and provides validation and
 conversion for the values in the dictionary. The values can be of a specific
@@ -3162,7 +3180,7 @@ field type, which is used to validate and convert each value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>field_type</strong> (<a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><em>Field</em></a><em> | </em><em>None</em>) – The field type for values in the dictionary</p></li>
+<li><p><strong>field_type</strong> (<a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><em>Field</em></a><em> | </em><em>None</em>) – The field type for values in the dictionary</p></li>
 <li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>) – Additional arguments to pass to the parent class</p></li>
 </ul>
 </dd>
@@ -3241,7 +3259,7 @@ value in the dictionary using the field_type if provided.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.ReferenceField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">ReferenceField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/reference.html#ReferenceField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.ReferenceField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Reference to another document.</p>
 <p>This field type stores references to other documents in the database.
 It can accept a document instance, an ID string, or a dictionary with an ID.</p>
@@ -3343,7 +3361,7 @@ It accepts a document instance, an ID string, a dictionary with an ID, or a Reco
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.RelationField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">RelationField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_document</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/reference.html#RelationField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.RelationField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Field representing a relation between documents.</p>
 <p>This field type stores relations between documents in the database.
 It can accept a document instance, an ID string, or a dictionary with an ID.</p>
@@ -3486,7 +3504,7 @@ It accepts a document instance, an ID string, or a dictionary with an ID.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.GeometryField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">GeometryField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/geometry.html#GeometryField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.GeometryField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Field for handling geometric data in SurrealDB.</p>
 <p>This field validates and processes geometric data according to SurrealDB’s
 geometry specification. It supports various geometry types including Point,
@@ -4477,7 +4495,7 @@ that includes not just WHERE conditions but also FETCH, GROUP BY, etc.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.DurationField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">DurationField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/datetime.html#DurationField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.DurationField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Duration field type.</p>
 <p>This field type stores durations of time and provides validation and
 conversion between Python timedelta objects and SurrealDB duration strings.</p>
@@ -4559,7 +4577,7 @@ converted to a timedelta from a string.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.OptionField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">OptionField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/additional.html#OptionField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.OptionField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Option field type.</p>
 <p>This field type makes a field optional and guarantees it to be either
 None or a value of the specified type.</p>
@@ -4578,7 +4596,7 @@ None or a value of the specified type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>field_type</strong> (<a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the value when not None</p></li>
+<li><p><strong>field_type</strong> (<a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the value when not None</p></li>
 <li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>) – Additional arguments to pass to the parent class</p></li>
 </ul>
 </dd>
@@ -4649,7 +4667,7 @@ the field_type’s to_db method if the value is not None.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.LiteralField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">LiteralField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allowed_values</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#LiteralField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.LiteralField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Field for union/enum-like values.</p>
 <p>Allows a field to accept multiple different types or specific values,
 similar to a union or enum type in other languages.</p>
@@ -4738,7 +4756,7 @@ using the appropriate field type if the value is not a literal.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.RangeField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">RangeField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/additional.html#RangeField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.RangeField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Field for storing ranges of values.</p>
 <p>This field type stores ranges of values with minimum and maximum bounds.
 It supports various types for the bounds, such as numbers, strings, and dates.</p>
@@ -4757,8 +4775,8 @@ age_range = RangeField(min_type=IntField(), max_type=IntField())</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>min_type</strong> (<a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the minimum value</p></li>
-<li><p><strong>max_type</strong> (<a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the maximum value (defaults to same as min_type)</p></li>
+<li><p><strong>min_type</strong> (<a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the minimum value</p></li>
+<li><p><strong>max_type</strong> (<a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><em>Field</em></a>) – The field type for the maximum value (defaults to same as min_type)</p></li>
 <li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a>) – Additional arguments to pass to the parent class</p></li>
 </ul>
 </dd>
@@ -4826,7 +4844,7 @@ values that can be validated by the respective field types.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.SetField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">SetField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/collection.html#SetField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.SetField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.ListField" title="quantumengine.fields.collection.ListField"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.collection.ListField" title="quantumengine.fields.collection.ListField"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListField</span></code></a></p>
 <p>Set field type.</p>
 <p>This field type stores sets of unique values and provides validation and
 conversion for the items in the set. Values are automatically deduplicated.</p>
@@ -4870,7 +4888,7 @@ that all items in the list are unique.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.TimeSeriesField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">TimeSeriesField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/datetime.html#TimeSeriesField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.TimeSeriesField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.DateTimeField" title="quantumengine.fields.datetime.DateTimeField"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.datetime.DateTimeField" title="quantumengine.fields.datetime.DateTimeField"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
 <p>Field for time series data.</p>
 <p>This field type extends DateTimeField and adds support for time series data.
 It can be used to store timestamps for time series data and supports
@@ -4922,7 +4940,7 @@ time_field = “timestamp”</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.EmailField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">EmailField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#EmailField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.EmailField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
 <p>Email field type.</p>
 <p>This field type stores email addresses and provides validation to ensure
 the value is a valid email address.</p>
@@ -4970,7 +4988,7 @@ the value is a valid email address.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.URLField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">URLField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#URLField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.URLField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
 <p>URL field type.</p>
 <p>This field type stores URLs and provides validation to ensure
 the value is a valid URL.</p>
@@ -5018,7 +5036,7 @@ the value is a valid URL.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.IPAddressField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">IPAddressField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipv4_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv6_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#IPAddressField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.IPAddressField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
 <p>IP address field type.</p>
 <p>This field type stores IP addresses and provides validation to ensure
 the value is a valid IPv4 or IPv6 address.</p>
@@ -5073,7 +5091,7 @@ the value is a valid IPv4 or IPv6 address.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.SlugField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">SlugField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#SlugField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.SlugField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.scalar.StringField" title="quantumengine.fields.scalar.StringField"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringField</span></code></a></p>
 <p>Slug field type.</p>
 <p>This field type stores slugs (URL-friendly strings) and provides validation
 to ensure the value is a valid slug.</p>
@@ -5121,7 +5139,7 @@ to ensure the value is a valid slug.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.ChoiceField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">ChoiceField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/fields/specialized.html#ChoiceField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.ChoiceField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Choice field type.</p>
 <p>This field type stores values from a predefined set of choices and provides
 validation to ensure the value is one of the allowed choices.</p>
@@ -5399,7 +5417,7 @@ and querying materialized views across different backends.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantumengine.MaterializedField">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">quantumengine.</span></span><span class="sig-name descname"><span class="pre">MaterializedField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/quantumengine/materialized_document.html#MaterializedField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#quantumengine.MaterializedField" title="Link to this definition"><span>¶</span></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#quantumengine.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="fields.html#quantumengine.fields.base.Field" title="quantumengine.fields.base.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <p>Field for materialized documents with aggregation support.</p>
 <dl class="field-list simple">
 </dl>
@@ -7189,6 +7207,22 @@ improve query performance for frequently accessed aggregated data.</p>
 <section id="fields">
 <h2>Fields<a class="headerlink" href="#fields" title="Link to this heading"><span>¶</span></a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Fields API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.base">Base Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.scalar">Scalar Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.datetime">DateTime Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.collection">Collection Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.reference">Reference Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.geometry">Geometry Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.id">ID Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#specialized-fields">Specialized Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#additional-fields">Additional Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#module-quantumengine.fields.clickhouse">ClickHouse-Specific Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html#complete-fields-module">Complete Fields Module</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 <section id="backends">

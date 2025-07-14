@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../contributing.html">
-    Contributing
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -190,6 +190,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../changelog.html">
     Changelog
@@ -330,6 +337,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../api/index.html">
     API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -502,7 +516,7 @@
 <span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Field">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.Field">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.base.Field">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Field</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for all field types.</span>
 
@@ -520,11 +534,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Field.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.Field.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.base.Field.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">db_field</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">define_schema</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">indexed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">unique</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
                  <span class="n">search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">analyzer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">index_with</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">materialized</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indexes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+                 <span class="n">materialized</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indexes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">help_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new Field.</span>
 
 <span class="sd">        Args:</span>
@@ -538,6 +553,7 @@
 <span class="sd">            analyzer: Analyzer to use for search indexes</span>
 <span class="sd">            index_with: List of other field names to include in the index</span>
 <span class="sd">            materialized: ClickHouse materialized column expression</span>
+<span class="sd">            help_text: Human-readable description of what this field represents</span>
 <span class="sd">            indexes: List of index specifications for advanced indexing</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="n">required</span>
@@ -553,11 +569,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">index_with</span> <span class="o">=</span> <span class="n">index_with</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">materialized</span> <span class="o">=</span> <span class="n">materialized</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span> <span class="o">=</span> <span class="n">indexes</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">help_text</span> <span class="o">=</span> <span class="n">help_text</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">py_type</span> <span class="o">=</span> <span class="n">Any</span></div>
 
 
 <div class="viewcode-block" id="Field.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.Field.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.base.Field.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the field value.</span>
 
@@ -590,7 +607,7 @@
 
 
 <div class="viewcode-block" id="Field.to_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.Field.to_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.base.Field.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">backend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Python value to database representation.</span>
 
@@ -635,7 +652,7 @@
         <span class="k">return</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="Field.from_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.Field.from_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.base.Field.from_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">from_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">backend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert database value to Python representation.</span>
 

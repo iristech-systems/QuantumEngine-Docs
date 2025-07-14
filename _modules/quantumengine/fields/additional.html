@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../contributing.html">
-    Contributing
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -190,6 +190,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../changelog.html">
     Changelog
@@ -330,6 +337,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../api/index.html">
     API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -489,7 +503,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 
 <div class="viewcode-block" id="OptionField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.OptionField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.OptionField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">OptionField</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Option field type.</span>
 
@@ -501,7 +515,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="OptionField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.OptionField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.OptionField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_type</span><span class="p">:</span> <span class="n">Field</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new OptionField.</span>
 
@@ -515,7 +529,7 @@
 
 
 <div class="viewcode-block" id="OptionField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.OptionField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.OptionField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the option value.</span>
 
@@ -538,7 +552,7 @@
 
 
 <div class="viewcode-block" id="OptionField.to_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.OptionField.to_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.OptionField.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Python value to database representation.</span>
 
@@ -558,7 +572,7 @@
 
 
 <div class="viewcode-block" id="OptionField.from_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.OptionField.from_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.OptionField.from_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">from_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert database value to Python representation.</span>
 
@@ -579,6 +593,8 @@
 
 
 
+<div class="viewcode-block" id="FutureField">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.FutureField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">FutureField</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Field for future (computed) values.</span>
 
@@ -590,6 +606,8 @@
 <span class="sd">        computation_expression: The SurrealDB expression to compute the value</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+<div class="viewcode-block" id="FutureField.__init__">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.FutureField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">computation_expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new FutureField.</span>
 
@@ -599,8 +617,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">computation_expression</span> <span class="o">=</span> <span class="n">computation_expression</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">py_type</span> <span class="o">=</span> <span class="n">Any</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">py_type</span> <span class="o">=</span> <span class="n">Any</span></div>
 
+
+<div class="viewcode-block" id="FutureField.to_db">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.FutureField.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert to SurrealDB future syntax.</span>
 
@@ -614,9 +635,13 @@
 <span class="sd">            The SurrealDB future syntax string</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># For future fields, we return a special SurrealDB syntax</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;future&gt; </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">computation_expression</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;future&gt; </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">computation_expression</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">&quot;</span></div>
+</div>
 
 
+
+<div class="viewcode-block" id="TableField">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.TableField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">TableField</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Table field type.</span>
 
@@ -631,6 +656,8 @@
 <span class="sd">        ```</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+<div class="viewcode-block" id="TableField.__init__">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.TableField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new TableField.</span>
 
@@ -638,8 +665,11 @@
 <span class="sd">            **kwargs: Additional arguments to pass to the parent class</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">py_type</span> <span class="o">=</span> <span class="nb">str</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">py_type</span> <span class="o">=</span> <span class="nb">str</span></div>
 
+
+<div class="viewcode-block" id="TableField.validate">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.TableField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the table name.</span>
 
@@ -662,8 +692,11 @@
             <span class="c1"># Basic validation for table names</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="ow">or</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid table name &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39; for field &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">value</span></div>
 
+
+<div class="viewcode-block" id="TableField.to_db">
+<a class="viewcode-back" href="../../../api/fields.html#quantumengine.fields.TableField.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Python string to database representation.</span>
 
@@ -680,11 +713,13 @@
                 <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
             <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
                 <span class="k">pass</span>
-        <span class="k">return</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">value</span></div>
+</div>
+
 
 
 <div class="viewcode-block" id="RangeField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RangeField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.RangeField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RangeField</span><span class="p">(</span><span class="n">Field</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Field for storing ranges of values.</span>
 
@@ -698,7 +733,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="RangeField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RangeField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.RangeField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_type</span><span class="p">:</span> <span class="n">Field</span><span class="p">,</span> <span class="n">max_type</span><span class="p">:</span> <span class="n">Field</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new RangeField.</span>
 
@@ -714,7 +749,7 @@
 
 
 <div class="viewcode-block" id="RangeField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RangeField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.RangeField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the range value.</span>
 
@@ -780,7 +815,7 @@
 
 
 <div class="viewcode-block" id="RangeField.to_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RangeField.to_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.RangeField.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Python range to database representation.</span>
 
@@ -807,7 +842,7 @@
 
 
 <div class="viewcode-block" id="RangeField.from_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.RangeField.from_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.RangeField.from_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">from_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert database range to Python representation.</span>
 

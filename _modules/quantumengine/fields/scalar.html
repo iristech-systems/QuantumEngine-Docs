@@ -177,8 +177,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../contributing.html">
-    Contributing
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -190,6 +190,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../changelog.html">
     Changelog
@@ -330,6 +337,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../api/index.html">
     API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fields/index.html">
+    Fields
   </a>
 </li>
 
@@ -490,7 +504,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 
 <div class="viewcode-block" id="StringField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.StringField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.StringField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">StringField</span><span class="p">(</span><span class="n">Field</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;String field type.</span>
 
@@ -504,7 +518,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="StringField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.StringField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.StringField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">regex</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">choices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new StringField.</span>
@@ -524,7 +538,7 @@
 
 
 <div class="viewcode-block" id="StringField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.StringField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.StringField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the string value.</span>
 
@@ -564,7 +578,7 @@
 
 
 <div class="viewcode-block" id="NumberField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.NumberField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.NumberField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">NumberField</span><span class="p">(</span><span class="n">Field</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for numeric fields.</span>
 
@@ -577,7 +591,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="NumberField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.NumberField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.NumberField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">max_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new NumberField.</span>
@@ -594,7 +608,7 @@
 
 
 <div class="viewcode-block" id="NumberField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.NumberField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.NumberField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the numeric value.</span>
 
@@ -629,7 +643,7 @@
 
 
 <div class="viewcode-block" id="IntField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.IntField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.IntField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">IntField</span><span class="p">(</span><span class="n">NumberField</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Integer field type.</span>
 
@@ -638,7 +652,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="IntField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.IntField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.IntField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new IntField.</span>
 
@@ -650,7 +664,7 @@
 
 
 <div class="viewcode-block" id="IntField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.IntField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.IntField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the integer value.</span>
 
@@ -672,7 +686,7 @@
 
 
 <div class="viewcode-block" id="IntField.to_db">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.IntField.to_db">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.IntField.to_db">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">backend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert Python value to database representation.</span>
 
@@ -692,7 +706,7 @@
 
 
 <div class="viewcode-block" id="FloatField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.FloatField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.FloatField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">FloatField</span><span class="p">(</span><span class="n">NumberField</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Float field type.</span>
 
@@ -701,7 +715,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="FloatField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.FloatField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.FloatField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new FloatField.</span>
 
@@ -713,7 +727,7 @@
 
 
 <div class="viewcode-block" id="FloatField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.FloatField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.FloatField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the float value.</span>
 
@@ -740,7 +754,7 @@
 
 
 <div class="viewcode-block" id="BooleanField">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.BooleanField">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.BooleanField">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">BooleanField</span><span class="p">(</span><span class="n">Field</span><span class="p">[</span><span class="nb">bool</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Boolean field type.</span>
 
@@ -749,7 +763,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="BooleanField.__init__">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.BooleanField.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.BooleanField.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a new BooleanField.</span>
 
@@ -761,7 +775,7 @@
 
 
 <div class="viewcode-block" id="BooleanField.validate">
-<a class="viewcode-back" href="../../../api/index.html#quantumengine.BooleanField.validate">[docs]</a>
+<a class="viewcode-back" href="../../../api/index.html#quantumengine.fields.scalar.BooleanField.validate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate the boolean value.</span>
 

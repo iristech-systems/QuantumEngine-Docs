@@ -1,0 +1,232 @@
+.. _fields:
+
+======
+Fields
+======
+
+QuantumEngine provides a comprehensive set of field types for defining document schemas.
+These fields handle validation, serialization, and backend-specific transformations.
+
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
+
+Overview
+--------
+
+Fields in QuantumEngine serve multiple purposes:
+
+* **Type validation**: Ensure data conforms to expected types
+* **Default values**: Provide sensible defaults for missing data
+* **Required validation**: Enforce mandatory fields
+* **Custom validation**: Apply business logic rules
+* **Backend adaptation**: Translate between Python types and database-specific formats
+
+Basic Usage
+-----------
+
+Fields are typically used as class attributes in document definitions:
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import StringField, IntField, DateTimeField
+
+    class User(Document):
+        name = StringField(required=True)
+        age = IntField(default=0)
+        created_at = DateTimeField(auto_now_add=True)
+
+Field Categories
+----------------
+
+Scalar Fields
+~~~~~~~~~~~~~
+
+Basic data types for simple values:
+
+* :class:`~quantumengine.fields.StringField` - Text data
+* :class:`~quantumengine.fields.IntField` - Integer numbers
+* :class:`~quantumengine.fields.FloatField` - Floating-point numbers
+* :class:`~quantumengine.fields.BooleanField` - True/False values
+* :class:`~quantumengine.fields.DecimalField` - Precise decimal numbers
+
+DateTime Fields
+~~~~~~~~~~~~~~~
+
+Temporal data handling:
+
+* :class:`~quantumengine.fields.DateTimeField` - Date and time values
+* :class:`~quantumengine.fields.TimeSeriesField` - Time series data
+* :class:`~quantumengine.fields.DurationField` - Time duration values
+
+Collection Fields
+~~~~~~~~~~~~~~~~~
+
+Container types for multiple values:
+
+* :class:`~quantumengine.fields.ListField` - Ordered lists
+* :class:`~quantumengine.fields.DictField` - Key-value mappings
+* :class:`~quantumengine.fields.SetField` - Unique value collections
+
+Reference Fields
+~~~~~~~~~~~~~~~~
+
+Relationships between documents:
+
+* :class:`~quantumengine.fields.ReferenceField` - Document references
+* :class:`~quantumengine.fields.RelationField` - Graph-style relations (SurrealDB)
+
+Specialized Fields
+~~~~~~~~~~~~~~~~~~
+
+Domain-specific field types:
+
+* :class:`~quantumengine.fields.EmailField` - Email addresses
+* :class:`~quantumengine.fields.URLField` - Web URLs
+* :class:`~quantumengine.fields.UUIDField` - UUID values
+* :class:`~quantumengine.fields.IPAddressField` - IP addresses
+* :class:`~quantumengine.fields.SlugField` - URL-friendly strings
+* :class:`~quantumengine.fields.ChoiceField` - Enumerated choices
+* :class:`~quantumengine.fields.RegexField` - Regex-validated strings
+
+ClickHouse-Specific Fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Optimized fields for ClickHouse backend:
+
+* :class:`~quantumengine.fields.clickhouse.LowCardinalityField` - Low cardinality optimization
+* :class:`~quantumengine.fields.clickhouse.FixedStringField` - Fixed-length strings
+* :class:`~quantumengine.fields.clickhouse.ArrayField` - Native array support
+* :class:`~quantumengine.fields.clickhouse.CompressedStringField` - Compressed text data
+
+Common Field Options
+--------------------
+
+All fields support these common parameters:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Parameter
+     - Description
+   * - ``required``
+     - Whether the field must have a value (default: ``False``)
+   * - ``default``
+     - Default value or callable that returns a default
+   * - ``db_field``
+     - Override the database field name
+   * - ``unique``
+     - Enforce uniqueness constraint
+   * - ``choices``
+     - Restrict values to a predefined set
+   * - ``validation``
+     - Custom validation function or list of functions
+
+Validation
+----------
+
+Fields provide multiple levels of validation:
+
+Type Validation
+~~~~~~~~~~~~~~~
+
+Automatic type checking based on field class:
+
+.. code-block:: python
+
+    age = IntField()  # Only accepts integers
+    name = StringField()  # Only accepts strings
+
+Custom Validators
+~~~~~~~~~~~~~~~~~
+
+Add custom validation logic:
+
+.. code-block:: python
+
+    def validate_age(value):
+        if value < 0 or value > 150:
+            raise ValidationError("Age must be between 0 and 150")
+    
+    age = IntField(validation=validate_age)
+
+Required Fields
+~~~~~~~~~~~~~~~
+
+Enforce mandatory fields:
+
+.. code-block:: python
+
+    email = EmailField(required=True)  # Must be provided
+
+Backend Considerations
+----------------------
+
+Different backends may handle fields differently:
+
+SurrealDB
+~~~~~~~~~
+
+* Supports all field types including relations
+* Handles complex nested structures
+* Native support for geometric data
+
+ClickHouse
+~~~~~~~~~~
+
+* Optimized for analytical workloads
+* Special fields for compression and low cardinality
+* No support for document references
+
+Examples
+--------
+
+Basic Document
+~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from quantumengine import Document
+    from quantumengine.fields import *
+
+    class Product(Document):
+        name = StringField(required=True)
+        price = DecimalField(required=True)
+        description = StringField()
+        tags = ListField(StringField())
+        in_stock = BooleanField(default=True)
+        created_at = DateTimeField(auto_now_add=True)
+
+With Validation
+~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    class User(Document):
+        username = StringField(required=True, unique=True)
+        email = EmailField(required=True)
+        age = IntField(validation=lambda v: v >= 18)
+        role = ChoiceField(choices=['admin', 'user', 'guest'])
+
+ClickHouse Analytics
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    class Event(Document):
+        __backend__ = 'clickhouse'
+        
+        event_type = LowCardinalityField(StringField())
+        timestamp = DateTimeField(required=True)
+        user_id = UUIDField()
+        properties = DictField()
+        tags = ArrayField(StringField())
+
+See Also
+--------
+
+* :doc:`/api/fields` - Complete API reference
+* :doc:`/tutorial` - Getting started guide
+* :doc:`/backends` - Backend-specific features
