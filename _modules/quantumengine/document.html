@@ -2626,69 +2626,17 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            connection: Optional connection to use</span>
-<span class="sd">            schemafull: Whether to create a SCHEMAFULL table (default: True)</span>
+<span class="sd">            schemafull: Whether to create a SCHEMAFULL table (default: True, only applies to SurrealDB)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">connection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">connection</span> <span class="o">=</span> <span class="n">ConnectionRegistry</span><span class="o">.</span><span class="n">get_default_connection</span><span class="p">()</span>
-
-        <span class="n">collection_name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_collection_name</span><span class="p">()</span>
-
-        <span class="c1"># Create the table</span>
-        <span class="n">schema_type</span> <span class="o">=</span> <span class="s2">&quot;SCHEMAFULL&quot;</span> <span class="k">if</span> <span class="n">schemafull</span> <span class="k">else</span> <span class="s2">&quot;SCHEMALESS&quot;</span>
-        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE TABLE </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">schema_type</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="c1"># Check if this is a time series table</span>
-        <span class="n">is_time_series</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">time_field</span> <span class="o">=</span> <span class="kc">None</span>
-
-        <span class="c1"># Check if the Meta class has time_series and time_field attributes</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;_meta&#39;</span><span class="p">):</span>
-            <span class="n">is_time_series</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_series&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-            <span class="n">time_field</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_field&#39;</span><span class="p">)</span>
-
-        <span class="c1"># If time_series is True but time_field is not specified, try to find a TimeSeriesField</span>
-        <span class="k">if</span> <span class="n">is_time_series</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">time_field</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;TimeSeriesField&#39;</span><span class="p">:</span>
-                    <span class="n">time_field</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">db_field</span>
-                    <span class="k">break</span>
-
-        <span class="c1"># Add time series configuration if applicable</span>
-        <span class="k">if</span> <span class="n">is_time_series</span> <span class="ow">and</span> <span class="n">time_field</span><span class="p">:</span>
-            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; TYPE TIMESTAMP TIMEFIELD </span><span class="si">{</span><span class="n">time_field</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="c1"># Add comment if available</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
-            <span class="c1"># Clean up docstring and escape single quotes</span>
-            <span class="n">doc</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&#39;&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">doc</span><span class="p">:</span>
-                <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; COMMENT &#39;</span><span class="si">{</span><span class="n">doc</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-
-        <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-
-        <span class="c1"># Create fields if schemafull or if field is marked with define_schema=True</span>
-        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="c1"># Skip id field as it&#39;s handled by SurrealDB</span>
-            <span class="k">if</span> <span class="n">field_name</span> <span class="o">==</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id_field&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
-                <span class="k">continue</span>
-
-            <span class="c1"># Only define fields if schemafull or if field is explicitly marked for schema definition</span>
-            <span class="k">if</span> <span class="n">schemafull</span> <span class="ow">or</span> <span class="n">field</span><span class="o">.</span><span class="n">define_schema</span><span class="p">:</span>
-                <span class="n">field_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_field_type_for_surreal</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
-                <span class="n">field_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE FIELD </span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">db_field</span><span class="si">}</span><span class="s2"> ON </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> TYPE </span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&quot;</span>
-
-                <span class="c1"># Add constraints</span>
-                <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
-                    <span class="n">field_query</span> <span class="o">+=</span> <span class="s2">&quot; ASSERT $value != NONE&quot;</span>
-
-
-                <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">field_query</span><span class="p">)</span>
-
-                <span class="c1"># Handle nested fields for DictField</span>
-                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">DictField</span><span class="p">)</span> <span class="ow">and</span> <span class="n">schemafull</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">db_field</span> <span class="o">==</span> <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
-                        <span class="n">nested_field_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE FIELD </span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">db_field</span><span class="si">}</span><span class="s2">.theme ON </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> TYPE string&quot;</span>
-                        <span class="k">await</span> <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">nested_field_query</span><span class="p">)</span></div>
+        <span class="c1"># Get the backend for this document</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_backend</span><span class="p">()</span>
+        
+        <span class="c1"># Delegate to backend-specific create_table method</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="s1">&#39;create_table&#39;</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">backend</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">schemafull</span><span class="o">=</span><span class="n">schemafull</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Fallback for backends without create_table method</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Backend </span><span class="si">{</span><span class="n">backend</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> doesn&#39;t support create_table&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Document.create_table_sync">
@@ -2696,75 +2644,16 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">create_table_sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">schemafull</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the table for this document class synchronously.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">connection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="kn">from</span><span class="w"> </span><span class="nn">.connection</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectionRegistry</span>
-            <span class="n">connection</span> <span class="o">=</span> <span class="n">ConnectionRegistry</span><span class="o">.</span><span class="n">get_default_connection</span><span class="p">()</span>
-
-        <span class="n">collection_name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_collection_name</span><span class="p">()</span>
-
-        <span class="c1"># Create the table</span>
-        <span class="n">schema_type</span> <span class="o">=</span> <span class="s2">&quot;SCHEMAFULL&quot;</span> <span class="k">if</span> <span class="n">schemafull</span> <span class="k">else</span> <span class="s2">&quot;SCHEMALESS&quot;</span>
-        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE TABLE </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">schema_type</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="c1"># Check if this is a time series table</span>
-        <span class="n">is_time_series</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">time_field</span> <span class="o">=</span> <span class="kc">None</span>
-
-        <span class="c1"># Check if the Meta class has time_series and time_field attributes</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;_meta&#39;</span><span class="p">):</span>
-            <span class="n">is_time_series</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_series&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-            <span class="n">time_field</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_field&#39;</span><span class="p">)</span>
-
-        <span class="c1"># If time_series is True but time_field is not specified, try to find a TimeSeriesField</span>
-        <span class="k">if</span> <span class="n">is_time_series</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">time_field</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;TimeSeriesField&#39;</span><span class="p">:</span>
-                    <span class="n">time_field</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">db_field</span>
-                    <span class="k">break</span>
-
-        <span class="c1"># Add time series configuration if applicable</span>
-        <span class="k">if</span> <span class="n">is_time_series</span> <span class="ow">and</span> <span class="n">time_field</span><span class="p">:</span>
-            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; TYPE TIMESTAMP TIMEFIELD </span><span class="si">{</span><span class="n">time_field</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="c1"># Add comment if available</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
-            <span class="c1"># Clean up docstring: remove newlines, extra spaces, and escape quotes</span>
-            <span class="n">doc</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-            <span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&#39;&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">doc</span><span class="p">:</span>
-                <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; COMMENT &#39;</span><span class="si">{</span><span class="n">doc</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-        <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-
-        <span class="c1"># Create fields if schemafull or if field is marked with define_schema=True</span>
-        <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="c1"># Skip id field as it&#39;s handled by SurrealDB</span>
-            <span class="k">if</span> <span class="n">field_name</span> <span class="o">==</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id_field&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">):</span>
-                <span class="k">continue</span>
-
-            <span class="c1"># Only define fields if schemafull or if field is explicitly marked for schema definition</span>
-            <span class="k">if</span> <span class="n">schemafull</span> <span class="ow">or</span> <span class="n">field</span><span class="o">.</span><span class="n">define_schema</span><span class="p">:</span>
-                <span class="n">field_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_field_type_for_surreal</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
-                <span class="n">field_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE FIELD </span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">db_field</span><span class="si">}</span><span class="s2"> ON </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> TYPE </span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&quot;</span>
-
-                <span class="c1"># Add constraints</span>
-                <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
-                    <span class="n">field_query</span> <span class="o">+=</span> <span class="s2">&quot; ASSERT $value != NONE&quot;</span>
-
-                <span class="c1"># Add comment if available</span>
-                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
-                    <span class="c1"># Clean up docstring: remove newlines, extra spaces, and escape quotes</span>
-                    <span class="n">doc</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-                    <span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&#39;&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">doc</span><span class="p">:</span>
-                        <span class="n">field_query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; COMMENT &#39;</span><span class="si">{</span><span class="n">doc</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-
-                <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">field_query</span><span class="p">)</span>
-
-                <span class="c1"># Handle nested fields for DictField</span>
-                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">DictField</span><span class="p">)</span> <span class="ow">and</span> <span class="n">schemafull</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">db_field</span> <span class="o">==</span> <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
-                        <span class="n">nested_field_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DEFINE FIELD </span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">db_field</span><span class="si">}</span><span class="s2">.theme ON </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2"> TYPE string&quot;</span>
-                        <span class="n">connection</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">nested_field_query</span><span class="p">)</span></div>
+        <span class="c1"># Get the backend for this document</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_backend</span><span class="p">()</span>
+        
+        <span class="c1"># Delegate to backend-specific create_table method</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="s1">&#39;create_table&#39;</span><span class="p">):</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+            <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">backend</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">schemafull</span><span class="o">=</span><span class="n">schemafull</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Fallback for backends without create_table method</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Backend </span><span class="si">{</span><span class="n">backend</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> doesn&#39;t support create_table&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Document.drop_table">
